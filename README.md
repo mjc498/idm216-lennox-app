@@ -28,7 +28,7 @@ For detailed documentation, visit the [Wiki](https://teams.microsoft.com/l/entit
 ## **Getting Started**
 
 ### **Prerequisites**
-- 
+- To be updated once app development begins
 
 ### **Installation**
 
@@ -38,7 +38,7 @@ Steps to get the app running locally:
    git clone <https://github.com/mjc498/idm216-lennox-app.git>
 2. Navigate to the project directory:
    cd your-repo-name
-3. 
+3. To be updated 
 
 ---
 
