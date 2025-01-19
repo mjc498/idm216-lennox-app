@@ -1,4 +1,4 @@
-# idm216-lennox-app
+# IDM 216: The Lennox App
 
 The Lennox app provides a seamless mobile interface, simplifying the process of ordering directly from the Lennox food truck. 
 
@@ -102,7 +102,7 @@ We welcome contributions! Please follow these steps:
 For questions or support, contact:
 
 - Project Manager: Isha Kothari - idk23@drexel.edu
-- Front-end Dev: Maria-Louisa Ching - mjc498@drexel.edu
-- Back-end Dev Zoey Bennett - zkb25@drexel.edu
+- Lead Developer / Front-end Developer: Maria-Louisa Ching - mjc498@drexel.edu
+- Back-end Developer: Zoey Bennett - zkb25@drexel.edu
 - UX Designer: Daryn Lam - dkl67@drexel.edu
 - UI Designer: McKenzie Addison - mba58@drexel.edu
