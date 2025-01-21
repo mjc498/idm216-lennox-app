@@ -1,0 +1,124 @@
+/* ------------------------------------------ */
+/* COLORS */
+:root {
+    --primary-bg-color: #FDF9F1;
+    --secondary-bg-color: #FFF;
+    --primary-font-color: #222222;
+    --primary-button-color: #D4E377;
+    --accent-color-one: #EF5A30;
+    --accent-color-two: #FEAE33;
+}
+
+/* ------------------------------------------ */
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Moderat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-bg-color);
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    font-family: 'Moderat', sans-serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: var(--primary-font-color);
+}
+
+.points-bar {
+    background: var(--primary-font-color);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 10px;
+    color: var(--secondary-bg-color);
+}
+
+.progress-bar {
+    background: var(--accent-color-two);
+    height: 8px;
+    border-radius: 5px;
+    width: 75%;
+    margin: 10px auto;
+}
+
+.points-earned {
+    font-weight: 700;
+    color: var(--secondary-bg-color);
+    font-size: 24px;
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary-font-color);
+    margin-top: 30px;
+}
+
+.see-more {
+    float: right;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.orders-container,
+.popular-items {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.order-item {
+    background: var(--secondary-bg-color);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 140px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-item img {
+    width: 100%;
+    border-bottom: 2px solid var(--accent-color-two);
+}
+
+.order-item h3 {
+    font-size: 16px;
+    margin: 5px 0;
+    font-weight: 700;
+}
+
+.order-item p {
+    color: var(--primary-font-color);
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.order-item .last-ordered {
+    color: var(--accent-color-one);
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.footer-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--secondary-bg-color);
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-nav img {
+    width: 24px;
+    height: 24px;
+}
