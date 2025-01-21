@@ -23,16 +23,19 @@ $result = $conn->query($dbCheckQuery);
 
 if ($result && $result->num_rows > 0) {
     echo "<script>console.log('Database already exists');</script>";
+    $conn->select_db('lennox');
+
 } else {
 
     $sql = "CREATE DATABASE lennox";
     if ($conn->query($sql) === TRUE) {
         echo "<script>console.log('Database created successfully');</script>";
+        $conn->select_db('lennox');
+
     } else {
         echo "<script>console.error('Error creating database: " . addslashes($conn->error) . "');</script>";
+        die("Exiting script due to error creating database.");
     }
 }
-
-$conn->close();
 
 ?>
