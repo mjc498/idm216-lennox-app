@@ -104,5 +104,5 @@ For questions or support, contact:
 - Project Manager: Isha Kothari - idk23@drexel.edu
 - Lead Developer / Front-end Developer: Maria-Louisa Ching - mjc498@drexel.edu
 - Back-end Developer: Zoey Bennett - zkb25@drexel.edu
-- UX Designer: Daryn Lam - dkl67@drexel.edu
-- UI Designer: McKenzie Addison - mba58@drexel.edu
+- UI Designer: Daryn Lam - dkl67@drexel.edu
+- UX Designer: McKenzie Addison - mba58@drexel.edu
