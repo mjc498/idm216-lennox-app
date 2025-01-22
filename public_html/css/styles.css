@@ -94,14 +94,6 @@ h1 {
     overflow: hidden;
 }
 
-.progress-fill {
-    height: 100%;
-    width: 50%;
-    background: var(--accent-color-two); 
-    border-top-right-radius: 5px;
-    border-bottom-right-radius: 5px; 
-}
-
 .points-number {
     font-size: 30px; 
     margin-right: 8px;
@@ -121,6 +113,7 @@ h1 {
     background: none; 
     text-align: left;  
     width: 140px; 
+    position: relative;
 }
 
 .order-item img {
@@ -128,22 +121,31 @@ h1 {
     width: 90%;
     object-fit: cover; 
     border-radius: 5px;
+    display: block;
+}
+
+.order-item .item-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .order-item h3 {
     font-size: 13px;
-    margin: 0 0 5px 0; 
+    margin: 0; 
+    font-weight: bold;
+    flex-grow: 1;
+    margin-top: 4px;
+}
+
+.order-item .price {
+    font-size: 11px;
+    color: var(--primary-font-color);
 }
 
 .order-item p {
     font-size: 12px;
     margin-bottom: 5px;
-}
-
-.order-item .last-ordered {
-    color: var(--accent-color-one);
-    font-weight: 700;
-    font-size: 12px;
 }
 
 /* ------------------------------------------ */
