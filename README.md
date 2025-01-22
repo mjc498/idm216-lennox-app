@@ -1,4 +1,4 @@
-# IDM 216: The Lennox App
+# Lennox Got Lunch
 
 The Lennox app provides a seamless mobile interface, simplifying the process of ordering directly from the Lennox food truck. 
 
