@@ -7,6 +7,7 @@
     --primary-button-color: #D4E377;
     --accent-color-one: #EF5A30;
     --accent-color-two: #FEAE33;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
 }
 
 /* ------------------------------------------ */
@@ -15,57 +16,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Moderat:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
+/* ------------------------------------------ */
+/* TEXT */
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--primary-bg-color);
     margin: 0;
-    padding: 20px;
+    padding: 20px 20px 70px 20px;
 }
 
 h1 {
     font-family: 'Moderat', sans-serif;
-    font-size: 56px;
-    font-weight: 700;
+    font-size: 40px;
     color: var(--primary-font-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
+.section-title {
+    font-size: 24px; 
+    color: var(--primary-font-color);
+    margin-top: 30px; 
+}
+
+.see-more {
+    float: right;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+/* ------------------------------------------ */
+/* ICONS */
+.cart-icon {
+    width: 40px; 
+    height: 40px;
+    cursor: pointer;
+}
+
+.star-icon {
+    width: 29px; 
+    height: 29px; 
+    margin-right: 8px;
+}
+
+/* ------------------------------------------ */
+/* POINTS SECTION */
 .points-bar {
     background: var(--primary-font-color);
     padding: 15px;
+    padding-left: 30px;
     border-radius: 10px;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    text-align: left; 
     margin-top: 10px;
     color: var(--secondary-bg-color);
-}
+    height: 116px;
+    padding-top: 5px; /* Adjust to move content up */
 
-.progress-bar {
-    background: var(--accent-color-two);
-    height: 8px;
-    border-radius: 5px;
-    width: 75%;
-    margin: 10px auto;
 }
 
 .points-earned {
     font-weight: 700;
     color: var(--secondary-bg-color);
-    font-size: 24px;
+    font-size: 18px; 
+    display: flex;
+    align-items: center;
 }
 
-.section-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: var(--primary-font-color);
-    margin-top: 30px;
+.progress-bar {
+    height: 16px;
+    width: 100%; 
+    max-width: 96%;
+    border-radius: 5px; 
+    background: var(--secondary-bg-color); 
+    position: relative;
+    overflow: hidden;
 }
 
-.see-more {
-    float: right;
-    font-size: 16px;
-    margin-top: 10px;
+.progress-fill {
+    height: 100%;
+    width: 50%;
+    background: var(--accent-color-two); 
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px; 
 }
 
+.points-number {
+    font-size: 30px; 
+    margin-right: 8px;
+}
+
+/* ------------------------------------------ */
+/* FOOD ITEMS */
 .orders-container,
 .popular-items {
     display: flex;
@@ -75,27 +118,24 @@ h1 {
 }
 
 .order-item {
-    background: var(--secondary-bg-color);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 140px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: none; 
+    text-align: left;  
+    width: 140px; 
 }
 
 .order-item img {
-    width: 100%;
-    border-bottom: 2px solid var(--accent-color-two);
+    height: 124px; 
+    width: 90%;
+    object-fit: cover; 
+    border-radius: 5px;
 }
 
 .order-item h3 {
-    font-size: 16px;
-    margin: 5px 0;
-    font-weight: 700;
+    font-size: 13px;
+    margin: 0 0 5px 0; 
 }
 
 .order-item p {
-    color: var(--primary-font-color);
     font-size: 12px;
     margin-bottom: 5px;
 }
@@ -106,12 +146,14 @@ h1 {
     font-size: 12px;
 }
 
+/* ------------------------------------------ */
+/* FOOTER */
 .footer-nav {
     position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
-    background: var(--secondary-bg-color);
+    background: var(--primary-font-color);
     display: flex;
     justify-content: space-around;
     padding: 10px 0;
@@ -121,4 +163,9 @@ h1 {
 .footer-nav img {
     width: 24px;
     height: 24px;
+    padding: 10px;
+}
+
+.footer-nav img:hover {
+    background-color: #161616; 
 }
