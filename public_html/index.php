@@ -13,7 +13,7 @@ require '../config.php';
 <body>
     
     <header>
-        <h1>HELLO, AVA! 
+        <h1>HELLO, GUEST! 
         <img src="icons/cart-icon.png" alt="Shopping cart icon with items" class="cart-icon"></h1>
     </header>
 
@@ -25,42 +25,54 @@ require '../config.php';
             </div>
             <p class="points-earned">
                 <img src="icons/points-icon.png" alt="Star icon representing points" class="star-icon">
-                <span class="points-number">4030</span> Points earned
+                <span class="points-number">0</span> Points earned
             </p>        
         </section>
 
         <section>
-            <h2 class="section-title">PREVIOUS ORDERS</h2>
+            <h2 class="section-title">POPULAR</h2>
             <div class="orders-container">
                 <div class="order-item">
-                    <img src="images/placeholder.png" alt="BBQ Chicken Cheesesteak image">
-                    <h3>BBQ Chicken Cheesesteak</h3>
-                    <p>$12</p>
-                    <p class="last-ordered">Last ordered 12/2/24</p>
+                    <img src="images/placeholder.png" alt="Placeholder image">
+                    <h3>Original</h3>
+                    <p class="price">$9</p>
+                    <p>Description lorem ipsum...</p>
                 </div>
                 <div class="order-item">
-                    <img src="images/placeholder.png" alt="Beef Banh Mi image">
-                    <h3>Beef Banh Mi</h3>
-                    <p>$11.75</p>
-                    <p class="last-ordered">Last ordered 11/30/24</p>
+                    <img src="images/placeholder.png" alt="Placeholder image">
+                    <h3>Beef</h3>
+                    <p class="price">$9.75</p>
+                    <p>Description lorem ipsum...</p>
+                </div>
+                <div class="order-item">
+                    <img src="images/placeholder.png" alt="Placeholder image">
+                    <h3>Pork</h3>
+                    <p class="price">$9.75</p>
+                    <p>Description lorem ipsum...</p>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2 class="section-title">POPULAR <span class="see-more">See more</span></h2>
+            <h2 class="section-title">MAKE IT A COMBO<span class="see-more">See more</span></h2>
             <div class="popular-items">
                 <div class="order-item">
-                    <img src="images/placeholder.png" alt="Original Banh Mi image">
-                    <h3>Original</h3>
-                    <p>$9</p>
-                    <p>Wow! So Banh Mi! So good! So great!</p>
+                    <img src="images/placeholder.png" alt="Placeholder image">
+                    <h3>Fries</h3>
+                    <p class="price">$2</p>
+                    <p>Description lorem ipsum...</p>
                 </div>
                 <div class="order-item">
-                    <img src="images/placeholder.png" alt="Beef Banh Mi image">
-                    <h3>Beef</h3>
-                    <p>$9.75</p>
-                    <p>Wow! So Banh Mi! So good! So great!</p>
+                    <img src="images/placeholder.png" alt="Placeholder image">
+                    <h3>Cheese Fries</h3>
+                    <p class="price">$4</p>
+                    <p>Description lorem ipsum...</p>
+                </div>
+                <div class="order-item">
+                    <img src="images/placeholder.png" alt="Placeholder image">
+                    <h3>Loaded Fries</h3>
+                    <p class="price">$4</p>
+                    <p>Description lorem ipsum...</p>
                 </div>
             </div>
         </section>
