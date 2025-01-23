@@ -34,46 +34,82 @@ require '../config.php';
             <div class="orders-container">
                 <div class="order-item">
                     <img src="images/placeholder.png" alt="Placeholder image">
-                    <h3>Original</h3>
-                    <p class="price">$9</p>
+                    <div class="add-icon">
+                        <img src="icons/add-icon.png" alt="Add item">
+                    </div>
+                    <div class="item-info">
+                        <h3>Original</h3>
+                        <p class="price">$9</p>
+                    </div>
                     <p>Description lorem ipsum...</p>
                 </div>
                 <div class="order-item">
                     <img src="images/placeholder.png" alt="Placeholder image">
-                    <h3>Beef</h3>
-                    <p class="price">$9.75</p>
+                    <div class="add-icon">
+                        <img src="icons/add-icon.png" alt="Add item">
+                    </div>
+                    <div class="item-info">
+                        <h3>Beef</h3>
+                        <p class="price">$9.75</p>
+                    </div>
                     <p>Description lorem ipsum...</p>
                 </div>
                 <div class="order-item">
                     <img src="images/placeholder.png" alt="Placeholder image">
-                    <h3>Pork</h3>
-                    <p class="price">$9.75</p>
+                    <div class="add-icon">
+                        <img src="icons/add-icon.png" alt="Add item">
+                    </div>
+                    <div class="item-info">
+                        <h3>Pork</h3>
+                        <p class="price">$9.75</p>
+                    </div>
                     <p>Description lorem ipsum...</p>
                 </div>
             </div>
+            <div class="scroll-indicator">
+                <div class="scroll-fill"></div>
+            </div>
         </section>
-
+       
         <section>
-            <h2 class="section-title">MAKE IT A COMBO<span class="see-more">See more</span></h2>
-            <div class="popular-items">
+            <h2 class="section-title">MAKE IT A COMBO</h2>
+            <div class="orders-container">
                 <div class="order-item">
                     <img src="images/placeholder.png" alt="Placeholder image">
-                    <h3>Fries</h3>
-                    <p class="price">$2</p>
+                    <div class="add-icon">
+                        <img src="icons/add-icon.png" alt="Add item">
+                    </div>
+                    <div class="item-info">
+                        <h3>Fries</h3>
+                        <p class="price">$2</p>
+                    </div>
                     <p>Description lorem ipsum...</p>
                 </div>
                 <div class="order-item">
                     <img src="images/placeholder.png" alt="Placeholder image">
-                    <h3>Cheese Fries</h3>
-                    <p class="price">$4</p>
+                    <div class="add-icon">
+                        <img src="icons/add-icon.png" alt="Add item">
+                    </div>
+                    <div class="item-info">
+                        <h3>Cheese Fries</h3>
+                        <p class="price">$4</p>
+                    </div>
                     <p>Description lorem ipsum...</p>
                 </div>
                 <div class="order-item">
                     <img src="images/placeholder.png" alt="Placeholder image">
-                    <h3>Loaded Fries</h3>
-                    <p class="price">$4</p>
+                    <div class="add-icon">
+                        <img src="icons/add-icon.png" alt="Add item">
+                    </div>
+                    <div class="item-info">
+                        <h3>Loaded Fries</h3>
+                        <p class="price">$4</p>
+                    </div>
                     <p>Description lorem ipsum...</p>
                 </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="scroll-fill"></div>
             </div>
         </section>
     </main>
@@ -84,6 +120,18 @@ require '../config.php';
         <img src="icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
         <img src="icons/profile-icon.png" alt="Profile" aria-label="View profile">
     </nav>
+
+    <script>
+        const scrollContainer = document.getElementById('scrollContainer');
+        const scrollFill = document.getElementById('scrollFill');
+
+        scrollContainer.addEventListener('scroll', () => {
+            let maxScroll = scrollContainer.scrollWidth - scrollContainer.clientWidth;
+            let scrollPosition = scrollContainer.scrollLeft;
+            let scrollPercentage = (scrollPosition / maxScroll) * 100;
+            scrollFill.style.width = `${scrollPercentage}%`;
+        });
+    </script>
 
 </body>
 </html>
