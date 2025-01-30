@@ -7,120 +7,122 @@ require '../config.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- LINKS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="fonts/font-face.css">
+
+<!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="images/lennox-logo-icon.png">
+
     <title>Lennox Got Lunch</title>
-    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+
+<!-- HEADER -->
     <header>
-        <h1>HELLO, GUEST! 
-        <img src="icons/cart-icon.png" alt="Shopping cart icon with items" class="cart-icon"></h1>
+        <div class="header-container">
+            <img src="../icons/cart-icon.png" alt="Shopping cart icon with items" class="cart-icon">
+            <h1 class="hello-guest">HELLO, GUEST!</h1>
+        </div>
     </header>
 
+<!-- POINTS SECTION -->
     <main>
         <section class="points-bar">
-            <p>Keep earning points towards FREE rewards!</p>
+            <p>Keep earning points towards <strong>FREE</strong> rewards!</p>
             <div class="progress-bar">
                 <div class="progress-fill"></div>
             </div>
             <p class="points-earned">
-                <img src="icons/points-icon.png" alt="Star icon representing points" class="star-icon">
-                <span class="points-number">0</span> Points earned
+                <img src="../icons/points-icon.png" alt="Star icon representing points" class="star-icon">
+                <strong>0 points earned.</strong>
             </p>        
         </section>
 
+<!-- PREVIOUS ORDERS SECTION -->
         <section>
-            <h2 class="section-title">POPULAR</h2>
+            <h2 class="section-title">
+                PREVIOUS ORDERS
+                <img src="../icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
+            </h2>
             <div class="orders-container">
                 <div class="order-item">
-                    <img src="images/placeholder.png" alt="Placeholder image">
+                    <img src="images/placeholder.png" class="food-image" alt="Placeholder image">
                     <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item">
+                        <img src="../icons/add-icon.png" alt="Add item">
                     </div>
                     <div class="item-info">
-                        <h3>Original</h3>
-                        <p class="price">$9</p>
+                        <h3>Title</h3>
+                        <p class="price">$</p>
                     </div>
-                    <p>Description lorem ipsum...</p>
-                </div>
-                <div class="order-item">
-                    <img src="images/placeholder.png" alt="Placeholder image">
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item">
-                    </div>
-                    <div class="item-info">
-                        <h3>Beef</h3>
-                        <p class="price">$9.75</p>
-                    </div>
-                    <p>Description lorem ipsum...</p>
-                </div>
-                <div class="order-item">
-                    <img src="images/placeholder.png" alt="Placeholder image">
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item">
-                    </div>
-                    <div class="item-info">
-                        <h3>Pork</h3>
-                        <p class="price">$9.75</p>
-                    </div>
-                    <p>Description lorem ipsum...</p>
+                    <p class="last-order"><strong>Last ordered on...</strong></p>
                 </div>
             </div>
+<!-- SCROLL -->
             <div class="scroll-indicator">
                 <div class="scroll-fill"></div>
             </div>
         </section>
-       
+  
+<!-- POPULAR ITEMS SECTION -->
         <section>
-            <h2 class="section-title">MAKE IT A COMBO</h2>
+            <h2 class="section-title">
+                POPULAR ITEMS
+                <img src="../icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
+            </h2>            
             <div class="orders-container">
                 <div class="order-item">
                     <img src="images/placeholder.png" alt="Placeholder image">
                     <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item">
+                        <img src="../icons/add-icon.png" alt="Add item">
                     </div>
                     <div class="item-info">
-                        <h3>Fries</h3>
-                        <p class="price">$2</p>
+                        <h3>Title</h3>
+                        <p class="price">$</p>
                     </div>
-                    <p>Description lorem ipsum...</p>
+                    <p>Description</p>
                 </div>
                 <div class="order-item">
                     <img src="images/placeholder.png" alt="Placeholder image">
                     <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item">
+                        <img src="../icons/add-icon.png" alt="Add item">
                     </div>
                     <div class="item-info">
-                        <h3>Cheese Fries</h3>
-                        <p class="price">$4</p>
+                        <h3>Title</h3>
+                        <p class="price">$</p>
                     </div>
-                    <p>Description lorem ipsum...</p>
+                    <p>Description</p>
                 </div>
                 <div class="order-item">
                     <img src="images/placeholder.png" alt="Placeholder image">
                     <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item">
+                        <img src="../icons/add-icon.png" alt="Add item">
                     </div>
                     <div class="item-info">
-                        <h3>Loaded Fries</h3>
-                        <p class="price">$4</p>
+                        <h3>Title</h3>
+                        <p class="price">$</p>
                     </div>
-                    <p>Description lorem ipsum...</p>
+                    <p>Description</p>
                 </div>
             </div>
+
+<!-- SCROLL -->
             <div class="scroll-indicator">
                 <div class="scroll-fill"></div>
             </div>
         </section>
     </main>
 
+<!-- FOOTER -->
     <nav class="footer-nav">
-        <img src="icons/home-icon.png" alt="Home" aria-label="Go to homepage">
-        <img src="icons/menu-icon.png" alt="Menu" aria-label="View the menu">
-        <img src="icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
-        <img src="icons/profile-icon.png" alt="Profile" aria-label="View profile">
+        <img src="../icons/home-icon.png" alt="Home" aria-label="Go to homepage">
+        <img src="../icons/menu-icon.png" alt="Menu" aria-label="View the menu">
+        <img src="../icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
+        <img src="../icons/profile-icon.png" alt="Profile" aria-label="View profile">
     </nav>
 
+<!-- SCRIPT -->
     <script>
         const scrollContainer = document.getElementById('scrollContainer');
         const scrollFill = document.getElementById('scrollFill');
