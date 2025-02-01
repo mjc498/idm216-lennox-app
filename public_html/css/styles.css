@@ -40,29 +40,37 @@ h1 {
 
 /* ------------------------------------------ */
 /* ICONS */
-.cart-icon {
-    width: 36px; 
-    height: 36px;
+.cart-icon,
+.star-icon,
+.arrow-icon {
     cursor: pointer;
-    position: absolute;  
-    top: 20px;          
-    right: 20px;         
+}
+
+.cart-icon {
+    width: 36px;
+    height: 36px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
 }
 
 .star-icon {
-    width: 29px; 
-    height: 29px; 
+    width: 29px;
+    height: 29px;
     margin-right: 8px;
 }
 
 .arrow-icon {
     width: 24px;
     height: 24px;
-    cursor: pointer;
 }
 
 /* ------------------------------------------ */
 /* POINTS SECTION */
+.points-section {
+    text-decoration: none;
+}
+
 .points-bar {
     background: var(--primary-font-color);
     padding: 5px 15px 15px 30px;
@@ -82,6 +90,11 @@ h1 {
     width: 100%; 
 }
 
+.points-number {
+    font-size: 30px; 
+    margin-right: 8px;
+}
+
 .progress-bar {
     height: 16px;
     width: 291px; 
@@ -91,11 +104,6 @@ h1 {
     position: relative;
     overflow: hidden;
     margin: 10px auto; 
-}
-
-.points-number {
-    font-size: 30px; 
-    margin-right: 8px;
 }
 
 /* ------------------------------------------ */
