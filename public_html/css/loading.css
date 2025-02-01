@@ -12,10 +12,6 @@
 
 /* ------------------------------------------ */
 /* FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Moderat:wght@400;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 @font-face {
     font-family: 'Tusker Grotesk';
     src: url('../fonts/TuskerGrotesk-Regular.woff2') format('woff2'),
@@ -25,7 +21,7 @@
 }
 
 /* ------------------------------------------ */
-/* LOGIN AND SIGNUP */
+/* GENERAL STYLES */
 * {
     margin: 0;
     padding: 0;
@@ -38,38 +34,47 @@ body {
     align-items: center;
     height: 100vh;
     background-color: var(--primary-bg-color);
+    font-family: 'Moderat', sans-serif;
 }
 
-.login-container {
-    max-width: 275px;
-    text-align: center;
-}
-
+/* ------------------------------------------ */
+/* HEADINGS */
 h1 {
     font-family: 'Tusker Grotesk', sans-serif;
     font-size: 44px;
+    text-align: center !important;
 }
 
 h2 {
     font-family: 'Tusker Grotesk', sans-serif;
     font-size: 28px;
     margin-bottom: 28px;
+    text-align: center !important;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid var(--primary-font-color);
-    border-radius: 10px;
-    font-size: 12px;
-    font-family: moderat, sans-serif;
-    background-color: var(--primary-bg-color);
-    color: #726E6E;
-    margin-top: 5px !important;
-    margin-bottom: 15px !important;
+/* ------------------------------------------ */
+/* LOGIN */
+.login-container {
+    max-width: 275px;
+    text-align: left;
 }
 
+.login-text {
+    font-family: 'Moderat', sans-serif;
+    font-size: 16px;
+    color: var(--primary-font-color);
+    text-align: left;
+}
+
+/* ------------------------------------------ */
+/* SIGNUP */
+.signup-button {
+    background-color: var(--secondary-bg-color) !important;
+    color: var(--primary-font-color) !important;
+}
+
+/* ------------------------------------------ */
+/* LOGIN & SIGNUP BUTTON STYLES */
 .login-button,
 .signup-button {
     width: 275px;
@@ -82,27 +87,51 @@ input {
     cursor: pointer;
     font-size: 22px;
     margin-top: 15px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+
 }
 
-.login-text {
-    font-family: moderat, sans-serif;
-    font-size: 16px;
-    color: var(--primary-font-color);
-    text-align: left;
+.login-button:hover {
+    background-color: var(--primary-button-color);
+    border: 1px solid var(--secondary-bg-color);
 }
 
-.signup-button {
-    background-color: var(--secondary-bg-color) !important;
-    color: var(--primary-font-color) !important;
+.signup-button:hover {
+    background-color: var(--primary-button-color) !important;
+    border: 1px solid var(--secondary-bg-color);
 }
 
 /* ------------------------------------------ */
 /* GUEST OPTION */
-i {
-    color: var(--accent-color-two);
-}
-
 .guest-option {
     margin-top: 18px;
     font-family: 'Moderat', sans-serif;
+}
+
+.guest-option p {
+    text-align: center;
+}
+
+.guest-option i {
+    color: var(--accent-color-two);
+}
+
+.guest-option a {
+    text-decoration: none;
+}
+
+/* ------------------------------------------ */
+/* FORM ELEMENTS */
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid var(--primary-font-color);
+    border-radius: 10px;
+    font-size: 12px;
+    font-family: 'Moderat', sans-serif;
+    background-color: var(--primary-bg-color);
+    color: #726E6E;
+    margin-top: 5px;
+    margin-bottom: 15px;
 }
