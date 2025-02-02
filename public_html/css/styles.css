@@ -65,6 +65,15 @@ h1 {
     height: 24px;
 }
 
+.reverse-arrow-icon {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    top: 20px;
+    left: 20px; 
+    rotate: 180deg;
+}
+
 /* ------------------------------------------ */
 /* POINTS SECTION */
 .points-section {
@@ -197,6 +206,111 @@ h1 {
     height: 100%;
     background-color: var(--primary-font-color);  
     border-radius: 20px;  
+}
+
+/* ------------------------------------------ */
+/* ACCOUNT | PAYMENT | ORDERS */
+.profile-sections {
+    display: flex;
+    justify-content: space-around;
+    margin: 2px;
+}
+
+.profile-account-title,
+.profile-payment-title,
+.profile-orders-title {
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    color: #7F7D79; 
+}
+
+.profile-account-title {
+    color: var(--primary-font-color);
+}
+
+.profile-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* ------------------------------------------ */
+/* UNDERLINES */
+.profile-account-title::after,
+.profile-payment-title::after,
+.profile-orders-title::after {
+    content: "";
+    display: block;
+    width: 102px;
+    height: 2px;
+    margin: 15px auto 0;
+}
+
+.profile-account-title::after {
+    background-color: var(--primary-button-color);
+}
+
+.profile-payment-title::after,
+.profile-orders-title::after {
+    background-color: #7F7D79;
+}
+
+.profile-underline,
+.profile-underline-email {
+    width: 80%;
+    height: 1px;
+    background-color: var(--primary-font-color);
+    margin: 10px auto 0;
+}
+
+.profile-underline-email {
+    margin-bottom: 32px;
+}
+/* ------------------------------------------ */
+/* PROFILE INFO */
+.profile-info,
+.profile-info-number,
+.profile-info-email {
+    display: flex;
+    align-items: center;
+    padding-left: 48px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    gap: 15px;
+}
+
+.profile-info-number,
+.profile-info-email {
+    padding-top: 8px; 
+    padding-bottom: 2px !important; 
+}
+
+.profile-pic {
+    width: 72px; 
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--accent-color-two);
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; 
+}
+
+.profile-name-bold {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 2px; 
+}
+
+.profile-name {
+    font-size: 14px;
+    color: #7F7D79;
+    margin-top: 0; 
+    line-height: 1.1; 
 }
 
 /* ------------------------------------------ */
