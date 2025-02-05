@@ -1,113 +1,100 @@
-
-
 CREATE TABLE users (
-    user_id INT AUTO_INCREMENT PRIMARY KEY,       
+    user_id SERIAL PRIMARY KEY,       
     email VARCHAR(255) UNIQUE NOT NULL,           
-    password_hash VARCHAR(255) NOT NULL,          
+    password VARCHAR(255) NOT NULL,          
     first_name VARCHAR(100),                      
     last_name VARCHAR(100),                       
-    phone_number VARCHAR(20),                     
-    points INT DEFAULT 0,                         
-    profile_picture VARCHAR(255),                 
-    cart_id INT,                                  
-    order_history_id INT,                         
-    favorites_id INT,                             
-    signup_date DATETIME DEFAULT CURRENT_TIMESTAMP 
+    phone_number VARCHAR(20),                                     
+    signup_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
 );
 
-
-CREATE TABLE products (
-    product_id INT AUTO_INCREMENT PRIMARY KEY,   
+CREATE TABLE items (
+    item_id SERIAL PRIMARY KEY,   
     name VARCHAR(255) NOT NULL,                   
-    description TEXT,                             
-    price DECIMAL(10, 2) NOT NULL,               
+    description_short TEXT, 
+    description_long TEXT,                             
+    price DECIMAL(10,2) NOT NULL,               
     category VARCHAR(100),
-    calorie INT NOT NULL,                                       
+    calorie INTEGER NOT NULL,                                       
     image_url VARCHAR(255)                        
 );
 
-
-
+CREATE TABLE addOns (
+    addOn_id SERIAL PRIMARY KEY,   
+    item_id INTEGER REFERENCES items(item_id) ON DELETE CASCADE,  
+    name VARCHAR(255) NOT NULL,                                              
+    price DECIMAL(10,2) NOT NULL,               
+    calorie INTEGER NOT NULL,                                       
+    image_url VARCHAR(255)                        
+);
 
 CREATE TABLE cart (
-    cart_id INT AUTO_INCREMENT PRIMARY KEY,   
-    user_id INT NOT NULL,                      
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP, 
-    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP, 
+    cart_id SERIAL PRIMARY KEY,   
+    user_id INTEGER NOT NULL,                      
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
     FOREIGN KEY (user_id) REFERENCES users(user_id) 
 );
 
-
 CREATE TABLE cart_items (
-    item_id INT AUTO_INCREMENT PRIMARY KEY,    
-    cart_id INT NOT NULL,                       
-    product_id INT NOT NULL,                    
-    quantity INT NOT NULL,                      
-    added_at DATETIME DEFAULT CURRENT_TIMESTAMP, 
+    cart_item_id SERIAL PRIMARY KEY,    
+    cart_id INTEGER NOT NULL,                       
+    item_id INTEGER NOT NULL,                    
+    quantity INTEGER NOT NULL,                      
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, 
     FOREIGN KEY (cart_id) REFERENCES cart(cart_id), 
-    FOREIGN KEY (product_id) REFERENCES products(product_id) 
+    FOREIGN KEY (item_id) REFERENCES items(item_id) 
 );
 
-
-
-
 CREATE TABLE order_history (
-    order_history_id INT AUTO_INCREMENT PRIMARY KEY,  
-    user_id INT NOT NULL,                             
-    order_date DATETIME DEFAULT CURRENT_TIMESTAMP,    
+    order_history_id SERIAL PRIMARY KEY,  
+    user_id INTEGER NOT NULL,                             
+    order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,    
     total_amount DECIMAL(10, 2) NOT NULL,             
-    status VARCHAR(50) DEFAULT 'pending',                              -- Status of the order (e.g., "completed", "pending")
+    status VARCHAR(50) DEFAULT 'pending',  
     FOREIGN KEY (user_id) REFERENCES users(user_id)  
 );
 
 CREATE TABLE order_items (
-    order_item_id INT AUTO_INCREMENT PRIMARY KEY,    
-    order_history_id INT NOT NULL,                    
-    product_id INT NOT NULL,                          
-    quantity INT NOT NULL,                            
+    order_item_id SERIAL PRIMARY KEY,    
+    order_history_id INTEGER NOT NULL,                    
+    item_id INTEGER NOT NULL,                          
+    quantity INTEGER NOT NULL,                            
     price DECIMAL(10, 2) NOT NULL,                    
     FOREIGN KEY (order_history_id) REFERENCES order_history(order_history_id), 
-    FOREIGN KEY (product_id) REFERENCES products(product_id) 
+    FOREIGN KEY (item_id) REFERENCES items(item_id) 
 );
-
 
 CREATE TABLE favorites (
-    favorites_id INT AUTO_INCREMENT PRIMARY KEY,    
-    user_id INT NOT NULL,                           
-    product_id INT NOT NULL,                         
-    added_at DATETIME DEFAULT CURRENT_TIMESTAMP,    
+    favorites_id SERIAL PRIMARY KEY,    
+    user_id INTEGER NOT NULL,                           
+    item_id INTEGER NOT NULL,                         
+    added_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,    
     FOREIGN KEY (user_id) REFERENCES users(user_id), 
-    FOREIGN KEY (product_id) REFERENCES products(product_id) 
+    FOREIGN KEY (item_id) REFERENCES items(item_id) 
 );
 
-
-
-
-
-INSERT INTO products (name, description, price, category, calorie, image_url)
+-- Insert Sample Items
+INSERT INTO items (name, description_long, description_short, price, category, calorie, image_url)
 VALUES
-    ('Orignal Banh Mi', 'Pate, cold cuts, pickled veggies, crispy baguette', 9, 'Banh Mi', 500, 'images/test.jpg'),
-    ('Beef Banh Mi', 'Vietnamese bagutte filled with pickled veggies, fresh herbs and rich, flavorful beef', 9.75, 'Banh Mi', 500, 'images/test.jpg'),
-    ('Pork Banh Mi', 'Vietnamese bagutte filled with pickled veggies, fresh herbs and rich, flavorful pork', 9.75, 'Banh Mi', 500, 'images/test.jpg'),
-    ('Chicken Banh Mi', 'Vietnamese bagutte filled with pickled veggies, fresh herbs and rich, flavorful chicken', 9.75, 'Banh Mi', 500, 'images/test.jpg'),
-    ('Chicken Cheesesteak', 'Diced chicken, cheese and grilled onions', 9, 'Cheesesteak', 500, 'images/test.jpg'),
-    ('Pizza Cheesesteak', 'Savory sauce, delious topping and soft crust on a Cheesesteak', 10, 'Cheesesteak', 500, 'images/test.jpg'),
-    ('Veggie Cheesesteak', 'Grilled veggies, cheese, and savory seasonings', 9, 'Cheesesteak', 500, 'images/test.jpg'),
-    ('Breakfast Sandwich', 'Hashbrown included', 7.50, 'Breakfast', 400, 'images/test.jpg'),
-    ('Breakfast Platter', 'Hashbrown and sausage included', 8, 'Breakfast', 400, 'images/test.jpg'),
-    ('Western Omelette', 'Eggs, veggie, and toast', 9, 'Breakfast', 400, 'images/test.jpg');
+    ('Original Banh Mi', 'Pate, cold cuts, pickled veggies, crispy baguette', 'short description', 9.00, 'Banh Mi', 500, 'images/test.jpg'),
+    ('Beef Banh Mi', 'Vietnamese baguette filled with pickled veggies, fresh herbs, and rich, flavorful beef', 'short description', 9.75, 'Banh Mi', 500, 'images/test.jpg'),
+    ('Pork Banh Mi', 'Vietnamese baguette filled with pickled veggies, fresh herbs, and rich, flavorful pork', 'short description', 9.75, 'Banh Mi', 500, 'images/test.jpg'),
+    ('Chicken Banh Mi', 'Vietnamese baguette filled with pickled veggies, fresh herbs, and rich, flavorful chicken', 'short description', 9.75, 'Banh Mi', 500, 'images/test.jpg'),
+    ('Chicken Cheesesteak', 'Diced chicken, cheese, and grilled onions', 'short description', 9.00, 'Cheesesteak', 500, 'images/test.jpg'),
+    ('Pizza Cheesesteak', 'Savory sauce, delicious toppings, and soft crust on a Cheesesteak', 10.00, 'Cheesesteak', 500, 'images/test.jpg'),
+    ('Veggie Cheesesteak', 'Grilled veggies, cheese, and savory seasonings', 'short description', 9.00, 'Cheesesteak', 500, 'images/test.jpg'),
+    ('Breakfast Sandwich', 'Hashbrown included', 'short description', 7.50, 'Breakfast', 400, 'images/test.jpg'),
+    ('Breakfast Platter', 'Hashbrown and sausage included', 'short description', 8.00, 'Breakfast', 400, 'images/test.jpg'),
+    ('Western Omelette', 'Eggs, veggies, and toast', 'short description', 9.00, 'Breakfast', 400, 'images/test.jpg');
 
-  INSERT INTO users (email, password_hash, first_name, last_name, phone_number, points, profile_picture, cart_id, order_history_id, favorites_id, signup_date)
+-- Insert Sample User
+INSERT INTO users (email, password, first_name, last_name, phone_number, signup_date)
 VALUES (
-    'admin@admin.com',               -- Admin email
-    '$2y$10$Vx5yH3YKa6oq1gEnkjHhUuKDP', -- Hashed password (example hash for "Admin123!")
-    'Admin',                           -- First name
-    'User',                            -- Last name
-    '1234567890',                      -- Phone number
-    0,                                 -- Points (set to 0 for admin)
-    'images/test.jpg',                -- Profile picture
-    NULL,                              -- cart_id (no cart for admin)
-    NULL,                              -- order_history_id (no orders for admin)
-    NULL,                              -- favorites_id (no favorites for admin)
-    CURRENT_TIMESTAMP                  -- Signup date (current date and time)
-);  
+    'admin@admin.com',
+    'Password', 
+    'Admin',
+    'User',
+    '1234567890',
+    CURRENT_TIMESTAMP
+);

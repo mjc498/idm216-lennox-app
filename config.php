@@ -1,41 +1,38 @@
 <?php
 // Created 1/21
-// Using Mysqli Procedural
+// Using PostgresSQL
 // Instructions here on how to connect to server and Database
+
+$host = "localhost";
+$port = "5432";
+$user = "postgres";
+$dbname = "lennox";
+$password = "Ppjcpbh5!";
+
 // Create connection
+$conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-echo "<script>console.log('Connected successfully from PHP');</script>";
-
-// Create database
-$dbCheckQuery = "SHOW DATABASES LIKE 'lennox'";
-$result = $conn->query($dbCheckQuery);
-
-if ($result && $result->num_rows > 0) {
-    echo "<script>console.log('Database already exists');</script>";
-    $conn->select_db('lennox');
-
+if ($conn) {
+    echo "Connected to PostgreSQL successfully!<br>";
 } else {
+    die("Connection failed.");
+}
 
-    $sql = "CREATE DATABASE lennox";
-    if ($conn->query($sql) === TRUE) {
-        echo "<script>console.log('Database created successfully');</script>";
-        $conn->select_db('lennox');
+// Check if database exists
+$dbCheckQuery = "SELECT 1 FROM pg_database WHERE datname = '$dbname'";
+$result = pg_query($conn, $dbCheckQuery);
 
+if (pg_num_rows($result) > 0) {
+    echo "Database '$dbname' already exists.<br>";
+} else {
+    // Create the database
+    $createDbQuery = "CREATE DATABASE $dbname";
+    if (pg_query($conn, $createDbQuery)) {
+        echo "Database '$dbname' created successfully!<br>";
     } else {
-        echo "<script>console.error('Error creating database: " . addslashes($conn->error) . "');</script>";
-        die("Exiting script due to error creating database.");
+        echo "Error creating database: " . pg_last_error($conn) . "<br>";
     }
 }
+
 
 ?>
