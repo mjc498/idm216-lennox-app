@@ -4,35 +4,46 @@
 // Instructions here on how to connect to server and Database
 
 $host = "localhost";
-$port = "5432";
+$port = "5433";
 $user = "postgres";
 $dbname = "lennox";
 $password = "Ppjcpbh5!";
 
 // Create connection
+$conn = pg_connect("host=$host port=$port dbname=postgres user=$user password=$password");
+
+if (!$conn) {
+    echo "Connection failed to PostgreSQL: " . pg_last_error();
+    die();
+}
+
+// Check if the database exists
+$result = pg_query($conn, "SELECT 1 FROM pg_database WHERE datname = '$dbname'");
+
+if (pg_num_rows($result) == 0) {
+    // If the database doesn't exist, create it
+    $createDbQuery = "CREATE DATABASE $dbname";
+    $createDbResult = pg_query($conn, $createDbQuery);
+    
+    if (!$createDbResult) {
+        echo "Error creating database: " . pg_last_error();
+        die();
+    }
+    echo "Database $dbname created successfully!";
+} else {
+    echo "Database $dbname already exists.";
+}
+
+// Now, connect to the created or existing database
+pg_close($conn); // Close initial connection
 $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
-if ($conn) {
-    echo "Connected to PostgreSQL successfully!<br>";
-} else {
-    die("Connection failed.");
+if (!$conn) {
+    echo "Connection failed to $dbname: " . pg_last_error();
+    die();
 }
 
-// Check if database exists
-$dbCheckQuery = "SELECT 1 FROM pg_database WHERE datname = '$dbname'";
-$result = pg_query($conn, $dbCheckQuery);
-
-if (pg_num_rows($result) > 0) {
-    echo "Database '$dbname' already exists.<br>";
-} else {
-    // Create the database
-    $createDbQuery = "CREATE DATABASE $dbname";
-    if (pg_query($conn, $createDbQuery)) {
-        echo "Database '$dbname' created successfully!<br>";
-    } else {
-        echo "Error creating database: " . pg_last_error($conn) . "<br>";
-    }
-}
-
+// Continue with your queries now that the database connection is successful
+echo "Connected to PostgreSQL database $dbname successfully!";
 
 ?>
