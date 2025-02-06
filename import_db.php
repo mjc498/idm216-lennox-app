@@ -9,7 +9,7 @@
 
 require_once 'config.php';
 
-$sqlFilePath = 'C:/xampp/htdocs/Lennox_Project/idm216-lennox-app/init.sql'; // Adjust this path
+$sqlFilePath = __DIR__ . '/init.sql'; // Dynamically set path (works across environments)
 
 if (!$conn) {
     die("Database connection failed: " . pg_last_error());
@@ -17,34 +17,48 @@ if (!$conn) {
 
 // Check if the 'users' table exists
 $tableCheckQuery = "SELECT EXISTS (
-    SELECT FROM information_schema.tables 
+    SELECT 1 FROM information_schema.tables 
     WHERE table_name = 'users'
-)";
+) AS table_exists";
+
 $result = pg_query($conn, $tableCheckQuery);
+if (!$result) {
+    die("Error checking table existence: " . pg_last_error($conn));
+}
+
 $row = pg_fetch_assoc($result);
 
-if ($row['exists'] === 't') {  // 't' means true in PostgreSQL
+if ($row['table_exists'] === 't') {  
     echo "<script>console.log('Database schema already exists. Skipping import.');</script>";
 } else {
-    // Execute the SQL file
     if (file_exists($sqlFilePath)) {
         $sql = file_get_contents($sqlFilePath);
-        $queries = explode(";", $sql); // Split queries
+        $queries = explode(";", $sql); 
+
+        pg_query($conn, "BEGIN"); // Start transaction
+        $success = true;
 
         foreach ($queries as $query) {
             if (trim($query) !== '') {
-                if (!pg_query($conn, $query . ";")) {
-                    echo "<script>console.error('Error executing SQL: " . addslashes(pg_last_error($conn)) . "');</script>";
+                if (!pg_query($conn, trim($query) . ";")) {
+                    $success = false;
+                    error_log("Error executing SQL: " . pg_last_error($conn));
+                    break; // Exit loop on failure
                 }
             }
         }
 
-        echo "<script>console.log('Database schema and data imported successfully');</script>";
+        if ($success) {
+            pg_query($conn, "COMMIT");
+            echo "<script>console.log('Database schema and data imported successfully');</script>";
+        } else {
+            pg_query($conn, "ROLLBACK");
+            echo "<script>console.error('Transaction failed. Changes rolled back.');</script>";
+        }
     } else {
         echo "<script>console.error('SQL file not found');</script>";
     }
 }
 
-// Close the connection
-pg_close($conn);
+
 ?>
