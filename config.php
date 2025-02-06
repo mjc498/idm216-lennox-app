@@ -29,9 +29,9 @@ if (pg_num_rows($result) == 0) {
         echo "Error creating database: " . pg_last_error();
         die();
     }
-    echo "Database $dbname created successfully!";
+    //echo "Database $dbname created successfully!";
 } else {
-    echo "Database $dbname already exists.";
+    //echo "Database $dbname already exists.";
 }
 
 // Now, connect to the created or existing database
@@ -41,9 +41,9 @@ $conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$pa
 if (!$conn) {
     echo "Connection failed to $dbname: " . pg_last_error();
     die();
-}
-
+} 
 // Continue with your queries now that the database connection is successful
-echo "Connected to PostgreSQL database $dbname successfully!";
+// echo "Connected to PostgreSQL database $dbname successfully!";
+require_once 'import_db.php';
 
 ?>
