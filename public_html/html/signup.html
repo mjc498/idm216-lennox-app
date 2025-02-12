@@ -6,8 +6,8 @@
 
 <!-- LINKS -->
     <link rel="stylesheet" href="../css/loading.css">
-    <!--path to fonts may need to be adjusted if they do not import correctly when app is deployed. For local dev, use the following path: http://127.0.0.1:5500/fonts/font-face.css-->
-    <link rel="stylesheet" href="http://127.0.0.1:5500/fonts/font-face.css">
+     <!-- USE THIS HREF FOR LOCAL -->
+     <link rel="stylesheet" href="http://127.0.0.1:5500/fonts/font-face.css">
 
 <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
@@ -18,11 +18,13 @@
 <body style="background-image: url(../images/background-pattern.svg);">
 
     <div class="signup-container">
-        <h1 style="color: var(--accent-color-one)">LENNOX</h1>
-        <h2>GOT LUNCH</h2>
+        <div class="blur-container">
+            <h1 style="color: var(--accent-color-one)">LENNOX</h1>
+            <h2>GOT LUNCH</h2>
+        </div>
 
 <!-- LOGIN CONTAINER | ADD PHP -->
-        <form action="login.php" method="POST"> <!-- ADD PHP FOR SIGN UP -->
+        <form action="login.php" method="POST">
             <div class="name-fields">
                 <div class="input-group">
                     <label for="first name" class="login-text">First name</label>
