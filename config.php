@@ -4,10 +4,12 @@
 // Instructions here on how to connect to server and Database
 
 $host = "localhost";
+//$host = "postgresql://lennox.flycast";
 $port = "5433";
 $user = "postgres";
 $dbname = "lennox";
 $password = "Ppjcpbh5!";
+//$password = "fvbUFkD84z4qfZP";
 
 // Create connection
 $conn = pg_connect("host=$host port=$port dbname=postgres user=$user password=$password");
