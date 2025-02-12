@@ -7,6 +7,17 @@
     --primary-button-color: #D4E377;
     --accent-color-one: #EF5A30;
     --accent-color-two: #FEAE33;
+    --box-shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+/* ------------------------------------------ */
+/* FONTS */
+@font-face {
+    font-family: 'Tusker Grotesk';
+    src: url('../fonts/TuskerGrotesk-Regular.woff2') format('woff2'),
+         url('../fonts/TuskerGrotesk-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* ------------------------------------------ */
@@ -18,6 +29,10 @@ body {
     padding: 20px 20px 70px;
 }
 
+main {
+    padding-bottom: 50px; 
+}
+
 h1 {
     font-family: 'Tusker Grotesk', sans-serif;
     font-size: 44px;
@@ -26,6 +41,10 @@ h1 {
     justify-content: space-between;
     align-items: center;
     margin-top: 60px;
+}
+
+a {
+    text-decoration: none; 
 }
 
 .section-title {
@@ -47,8 +66,8 @@ h1 {
 }
 
 .cart-icon {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     position: absolute;
     top: 20px;
     right: 20px;
@@ -77,18 +96,19 @@ h1 {
 /* ------------------------------------------ */
 /* POINTS SECTION */
 .points-section {
+    display: flex;
+    justify-content: center;
     text-decoration: none;
 }
 
 .points-bar {
-    background: var(--primary-font-color);
+    width: 341px;
+    height: 115px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115" fill="none"><path d="M300 95v10c-6 0-10 4-10 10H10c0-6-4-10-10-10V95c4 0 7-3 7-7s-3-7-7-7V72c4 0 7-3 7-7s-3-7-7-7V50c4 0 7-3 7-7s-3-7-7-7V28c4 0 7-3 7-7s-3-7-7-7V5c6 0 10-4 10-10h280c0 6 4 10 10 10v10c-4 0-7 3-7 7s3 7 7 7v10c-4 0-7 3-7 7s3 7 7 7v10c-4 0-7 3-7 7s3 7 7 7v10c-4 0-7 3-7 7s3 7 7 7z" fill="%23222222"/></svg>');
+    background-size: cover;
     padding: 5px 15px 15px 30px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center; 
-    margin-top: 10px;
     color: var(--secondary-bg-color);
-    height: 116px;
 }
 
 .points-earned {
@@ -113,6 +133,10 @@ h1 {
     position: relative;
     overflow: hidden;
     margin: 10px auto; 
+}
+
+.free-text {
+    color: var(--accent-color-one);
 }
 
 /* ------------------------------------------ */
@@ -191,6 +215,48 @@ h1 {
 }
 
 /* ------------------------------------------ */
+/* FILTER BUTTON */
+.menu-page .filter-buttons-wrapper {
+    margin-top: -20px; 
+}
+
+.menu-page .section-title {
+    margin-bottom: 15px;
+}
+
+.filter-buttons-wrapper {
+    display: flex;
+    gap: 10px; 
+}
+
+.filter-button {
+    display: inline-flex; 
+    align-items: center;
+    justify-content: center;
+    padding: 8px 12px;
+    background-color: var(--primary-bg-color);
+    font-size: 14px;
+    font-family: 'Moderat', sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid var(--primary-font-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    white-space: nowrap; 
+    width: auto;
+    min-width: fit-content; 
+}
+
+.filter-button:hover {
+    background-color: rgba(128, 128, 128, 0.15);
+    color: var(--primary-font-color);
+}
+
+.filter-button:active {
+    background-color: var(--primary-font-color); 
+    color: var(--secondary-bg-color);
+}
+
+/* ------------------------------------------ */
 /* SCROLL */
 .scroll-indicator {
     width: 60px; 
@@ -236,7 +302,7 @@ h1 {
 }
 
 /* ------------------------------------------ */
-/* UNDERLINES */
+/* PROFILE UNDERLINES */
 .profile-account-title::after,
 .profile-payment-title::after,
 .profile-orders-title::after {
@@ -268,7 +334,7 @@ h1 {
     margin-bottom: 32px;
 }
 /* ------------------------------------------ */
-/* PROFILE INFO */
+/* ACCOUNT SECTION */
 .profile-info,
 .profile-info-number,
 .profile-info-email {
@@ -312,6 +378,75 @@ h1 {
     margin-top: 0; 
     line-height: 1.1; 
 }
+
+/* ACCOUNT SECTION LOGIN */
+.login-icon {
+    width: 110px;
+    height: 110px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto 10px; 
+}
+
+.login-message {
+    width: 400px;
+    height: 70px;
+    display: block;
+    margin: 10px auto 19px;   
+    color: #8D8D8D;
+    text-align: center;
+    font-family: 'Tusker Grotesk', sans-serif;
+    font-size: 24px;
+
+    margin-bottom: 25px;
+}
+
+/* ------------------------------------------ */
+/* LOGIN & SIGNUP BUTTONS */
+.login-button {
+    width: 275px;
+    height: 58px;
+    padding: 10px;
+    background-color: var(--primary-font-color);
+    color: var(--secondary-bg-color);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    display: block;
+    margin: 10px auto 19px;    
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.login-button:hover {
+    background-color: var(--primary-button-color);
+    border: 1px solid var(--secondary-bg-color);
+    color: var(--primary-font-color);
+}
+
+.signup-button {
+    width: 275px;
+    height: 58px;
+    padding: 10px;
+    background-color: var(--secondary-bg-color);
+    color: var(--primary-font-color);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    display: block;
+    margin: 0 auto 0;    
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.signup-button:hover {
+    background-color: var(--primary-button-color);
+    border: 1px solid var(--secondary-bg-color);
+}
+
+/* ------------------------------------------ */
+/* PAYMENT SECTION */
+
 
 /* ------------------------------------------ */
 /* FOOTER */

@@ -6,38 +6,45 @@
 
 <!-- LINKS -->
     <link rel="stylesheet" href="../css/loading.css">
-    <link rel="stylesheet" href="fonts/font-face.css">
+     <!-- USE THIS HREF FOR LOCAL -->
+     <link rel="stylesheet" href="http://127.0.0.1:5500/fonts/font-face.css">
 
 <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
 
-    <title>Loading</title>
+    <title>Loading...</title>
 
+<!-- SCRIPT -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.style.opacity = "1";
+    
+            setTimeout(function () {
+                let fadeEffect = setInterval(function () {
+                    if (!document.body.style.opacity) {
+                        document.body.style.opacity = "1";
+                    }
+                    if (document.body.style.opacity > "0") {
+                        document.body.style.opacity -= "0.1"; 
+                    } else {
+                        clearInterval(fadeEffect);
+                        window.location.href = "landing.html"; 
+                    }
+                }, 50); 
+            }, 2000); 
+        });
+    
+        document.body.style.opacity = "0";
+        document.body.style.transition = "opacity 0.5s ease-in-out";
+    </script>
+    
 </head>
 <body style="background-image: url(../images/background-pattern.svg);">
 
 <!-- LOGIN & SIGNUP CONTAINER | ADD PHP -->
     <div class="login-container">
-        <h1>LENNOX</h1>
+        <h1 style="color: var(--accent-color-one)">LENNOX</h1>
         <h2>GOT LUNCH</h2>
-
-        <a href="../html/login.html">
-            <button class="login-button">Login</button>
-        </a>
-
-        <a href="#">
-                <button class="signup-button">Sign Up</button>
-        </a>
-
-<!-- GUEST OPTION | ADD PHP -->
-        <section class="guest-option">
-            <p>or 
-                <a href="#">
-                    <i>Continue as Guest</i>
-                </a>
-            </p>
-        </section>
     </div>
-
 </body>
 </html>
