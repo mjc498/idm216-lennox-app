@@ -39,22 +39,23 @@ body {
 
 /* ------------------------------------------ */
 /* HEADINGS */
-h1 {
+h1, h2 {
     font-family: 'Tusker Grotesk', sans-serif;
-    font-size: 70px;
     text-align: center !important;
+}
+
+h1 {
+    font-size: 70px;
     letter-spacing: -1.4px;
 }
 
 h2 {
-    font-family: 'Tusker Grotesk', sans-serif;
     font-size: 46px;
     margin-bottom: 28px;
-    text-align: center !important;
 }
 
 /* ------------------------------------------ */
-/* LOGIN */
+/* LOGIN & SIGNUP CONTAINERS */
 .login-container {
     max-width: 275px;
     text-align: left;
