@@ -41,13 +41,14 @@ body {
 /* HEADINGS */
 h1 {
     font-family: 'Tusker Grotesk', sans-serif;
-    font-size: 44px;
+    font-size: 70px;
     text-align: center !important;
+    letter-spacing: -1.4px;
 }
 
 h2 {
     font-family: 'Tusker Grotesk', sans-serif;
-    font-size: 28px;
+    font-size: 46px;
     margin-bottom: 28px;
     text-align: center !important;
 }
@@ -200,4 +201,10 @@ input {
     color: #726E6E;
     margin-top: 5px;
     margin-bottom: 15px;
+}
+
+/* ------------------------------------------ */
+/* BLUR CONTAINER */
+.blur-container {
+    backdrop-filter: blur(1px); 
 }
