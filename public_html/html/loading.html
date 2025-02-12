@@ -6,23 +6,24 @@
 
 <!-- LINKS -->
     <link rel="stylesheet" href="../css/loading.css">
-     <!--path to fonts may need to be adjusted if they do not import correctly when app is deployed. For local dev, use the following path: http://127.0.0.1:5500/fonts/font-face.css-->
+     <!-- USE THIS HREF FOR LOCAL -->
     <link rel="stylesheet" href="http://127.0.0.1:5500/fonts/font-face.css">
 
 <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
 
     <title>Loading</title>
-
 </head>
 <body style="background-image: url(../images/background-pattern.svg);">
 
 <!-- LOGIN & SIGNUP CONTAINER | ADD PHP -->
     <div class="login-container">
-        <h1 style="color: var(--accent-color-one)">LENNOX</h1>
-        <h2>GOT LUNCH</h2>
+        <div class="blur-container">
+            <h1 style="color: var(--accent-color-one)">LENNOX</h1>
+            <h2>GOT LUNCH</h2>
+        </div>
 
-        <a href="../html/login.html">
+        <a href="./login.html">
             <button type="submit" class="login-button">Login</button>
         </a>
 
@@ -34,7 +35,7 @@
         <section class="guest-option">
             <p>or 
                 <a href="#" style="font-style: normal; color: var(--accent-color-two);">
-                    Continue as Guest
+                    <i>Continue as Guest</i>
                 </a>
             </p>
         </section>
