@@ -14,7 +14,7 @@
     <title>Menu</title>
 
 </head>
-<body>
+<body class="menu-page">
 
 <!-- HEADER -->
     <header>
@@ -29,7 +29,15 @@
 <!-- MAIN CONTENT -->
 <main>
 
-<!-- FAVORITE ORDERS SECTION | ADD PHP -->
+    <!-- FILTERS | ADD PHP -->
+    <div class="filter-buttons-wrapper">
+        <button class="filter-button">Banh Mi</button>
+        <button class="filter-button">Breakfast & Melts</button>
+        <button class="filter-button">Cheesesteaks</button>
+        <button class="filter-button">Burgers</button>
+    </div>
+
+    <!-- BANH MI SECTION | ADD PHP -->
     <section>
         <h2 class="section-title">
             BAHN MI
@@ -56,7 +64,73 @@
             </div>
         </div>
 
-<!-- SCROLL | ADD JAVASCRIPT -->
+    <!-- SCROLL | ADD JAVASCRIPT -->
+        <div class="scroll-indicator">
+            <div class="scroll-fill"></div>
+        </div>
+    </section>
+
+    <!-- BREAKFAST & MELTS SECTION | ADD PHP -->
+    <section>
+        <h2 class="section-title">
+            BREAKFAST & MELTS
+            <a href="#">
+                <img src="../icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
+            </a>
+        </h2>
+
+        <div class="orders-container scroll-container">
+            <div class="order-item">
+                <a href="#">
+                    <img src="../images/placeholder.png" class="food-image" alt="Food placeholder image">
+                </a>
+
+                <div class="add-icon">
+                    <img src="../icons/add-icon.png" alt="Add item to order">
+                </div>
+
+                <div class="item-info">
+                    <h3>Title</h3>
+                    <p class="price">$</p>
+                </div>
+                <p class="last-order">Last ordered on...</p>
+            </div>
+        </div>
+
+    <!-- SCROLL | ADD JAVASCRIPT -->
+        <div class="scroll-indicator">
+            <div class="scroll-fill"></div>
+        </div>
+    </section>
+
+    <!-- CHEESESTEAKS SECTION | ADD PHP -->
+    <section>
+        <h2 class="section-title">
+            CHEESESTEAKS
+            <a href="#">
+                <img src="../icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
+            </a>
+        </h2>
+
+        <div class="orders-container scroll-container">
+            <div class="order-item">
+                <a href="#">
+                    <img src="../images/placeholder.png" class="food-image" alt="Food placeholder image">
+                </a>
+
+                <div class="add-icon">
+                    <img src="../icons/add-icon.png" alt="Add item to order">
+                </div>
+
+                <div class="item-info">
+                    <h3>Title</h3>
+                    <p class="price">$</p>
+                </div>
+                <p class="last-order">Last ordered on...</p>
+            </div>
+        </div>
+
+    <!-- SCROLL | ADD JAVASCRIPT -->
         <div class="scroll-indicator">
             <div class="scroll-fill"></div>
         </div>
