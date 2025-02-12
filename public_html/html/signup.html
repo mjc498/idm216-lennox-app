@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- LINKS -->
+    <link rel="stylesheet" href="../css/loading.css">
+    <!--path to fonts may need to be adjusted if they do not import correctly when app is deployed. For local dev, use the following path: http://127.0.0.1:5500/fonts/font-face.css-->
+    <link rel="stylesheet" href="http://127.0.0.1:5500/fonts/font-face.css">
+
+<!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
+
+    <title>Sign Up</title>
+
+</head>
+<body style="background-image: url(../images/background-pattern.svg);">
+
+    <div class="signup-container">
+        <h1 style="color: var(--accent-color-one)">LENNOX</h1>
+        <h2>GOT LUNCH</h2>
+
+<!-- LOGIN CONTAINER | ADD PHP -->
+        <form action="login.php" method="POST"> <!-- ADD PHP FOR SIGN UP -->
+            <div class="name-fields">
+                <div class="input-group">
+                    <label for="first name" class="login-text">First name</label>
+                    <input type="first name" id="first name" name="first name">
+                </div>
+
+                <div class="input-group">
+                    <label for="last name" class="login-text">Last name</label>
+                    <input type="last name" id="last name" name="last name">
+                </div>
+            </div>
+            
+            <label for="email" class="login-text">Email</label>
+            <input type="email" id="email" name="email">
+
+            <div class="mobile">
+                <div class="input-group">
+                    <label for="country" class="login-text">Country</label>
+                    <input type="country" id="country" name="country" placeholder="+1">
+                </div>
+
+                <div class="input-group">
+                    <label for="mobile number" class="login-text">Mobile number</label>
+                    <input type="mobile number" id="mobile number" name="mobile number">
+                </div>
+            </div>
+
+            <label for="password" class="login-text">Password</label>
+            <input type="password" id="password" name="password">
+
+            <button type="submit" class="create-account-button">Create Account</button>
+        </form>
+
+        <!-- GUEST OPTION | ADD PHP -->
+        <section class="guest-option">
+            <p>Already have an account? 
+                <a href="login.html" style="font-style: normal; color: var(--accent-color-two);">
+                    Log in
+                </a>
+            </p>
+        </section>
+    </div>
+</body>
+</html>

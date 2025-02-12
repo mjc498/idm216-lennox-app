@@ -6,7 +6,8 @@
 
 <!-- LINKS -->
     <link rel="stylesheet" href="../css/loading.css">
-    <link rel="stylesheet" href="fonts/font-face.css">
+    <!--path to fonts may need to be adjusted if they do not import correctly when app is deployed. For local dev, use the following path: http://127.0.0.1:5500/fonts/font-face.css-->
+    <link rel="stylesheet" href="http://127.0.0.1:5500/fonts/font-face.css">
 
 <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
@@ -17,19 +18,28 @@
 <body style="background-image: url(../images/background-pattern.svg);">
 
     <div class="login-container">
-        <h1>LENNOX</h1>
+        <h1 style="color: var(--accent-color-one)">LENNOX</h1>
         <h2>GOT LUNCH</h2>
 
 <!-- LOGIN CONTAINER | ADD PHP -->
         <form action="login.php" method="POST">
             <label for="email" class="login-text">Email</label>
-            <input type="email" id="email" name="email" placeholder="Type Email Here" required>
+            <input type="email" id="email" name="email">
 
             <label for="password" class="login-text">Password</label>
-            <input type="password" id="password" name="password" placeholder="Type Password Here" required>
+            <input type="password" id="password" name="password">
 
             <button type="submit" class="login-button">Login</button>
         </form>
+
+        <!-- GUEST OPTION | ADD PHP -->
+        <section class="guest-option">
+            <p>Don't have an account? 
+                <a href="signup.html" style="font-style: normal; color: var(--accent-color-two);"> <!-- ADD PHP FOR SIGN UP -->
+                    Register Now
+                </a>
+            </p>
+        </section>
     </div>
 
 </body>
