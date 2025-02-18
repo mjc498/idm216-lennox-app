@@ -3,21 +3,37 @@
 // Using PostgresSQL
 // Instructions here on how to connect to server and Database
 
-$host = "localhost";
-//$host = "postgresql://lennox.flycast";
-$port = "5433";
-$user = "postgres";
-$dbname = "lennox";
-$password = "Ppjcpbh5!";
-//$password = "fvbUFkD84z4qfZP";
+// $host = "localhost";
+// $port = "5433";
+// $user = "postgres";
+// $dbname = "lennox";
+// $password = "Ppjcpbh5!";
 
-// Create connection
-$conn = pg_connect("host=$host port=$port dbname=postgres user=$user password=$password");
+
+$database_url = getenv("DATABASE_URL");
+
+if (!$database_url) {
+    die("DATABASE_URL not found in environment variables!");
+}
+
+// Parse the DATABASE_URL into components
+$url = parse_url($database_url);
+echo "DATABASE_URL: " . $database_url;
+// Ensure the keys exist to avoid undefined warnings
+$host = isset($url["host"]) ? $url["host"] : 'localhost';
+$port = isset($url["port"]) ? $url["port"] : '5432';
+$user = isset($url["user"]) ? $url["user"] : 'postgres';
+$password = isset($url["pass"]) ? $url["pass"] : 'defaultpassword';
+$dbname = isset($url["path"]) ? ltrim($url["path"], '/') : 'lennox';
+
+// Create the connection string
+$conn = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
 
 if (!$conn) {
     echo "Connection failed to PostgreSQL: " . pg_last_error();
     die();
 }
+
 
 // Check if the database exists
 $result = pg_query($conn, "SELECT 1 FROM pg_database WHERE datname = '$dbname'");
