@@ -1,6 +1,13 @@
 <?php
-require '../config.php';
 session_start();
+require '../config.php';
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header('Location: loading.php');
+    exit;
+}
+
 
 $bahnMiQuery = "SELECT name, price, description_short, image_url FROM items WHERE category = 'Banh Mi'";
 $bahnMiResults = pg_query($conn, $bahnMiQuery);

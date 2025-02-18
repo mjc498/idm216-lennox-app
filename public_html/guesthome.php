@@ -21,7 +21,7 @@ if (isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="fonts/font-face.css">
 
 <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
+    <link rel="icon" type="image/x-icon" href="images/logo-lennox.png">
 
     <title>Home</title>
 
@@ -32,7 +32,7 @@ if (isset($_SESSION['user_id'])) {
     <header>
         <div class="header-container">
             <a href="#">
-                <img src="../icons/cart-icon.png" alt="Shopping cart icon with items" class="cart-icon">
+                <img src="icons/cart-icon.png" alt="Shopping cart icon with items" class="cart-icon">
             </a>
             <h1 class="hello-guest">HELLO, GUEST!</h1>
         </div>
@@ -49,7 +49,7 @@ if (isset($_SESSION['user_id'])) {
                 <div class="progress-fill"></div>
             </div>
             <p class="points-earned">
-                <img src="../icons/points-icon.png" alt="Star icon representing points" class="star-icon">
+                <img src="icons/points-icon.png" alt="Star icon representing points" class="star-icon">
                 <strong>0 points earned. :(</strong>
             </p>        
         </section>
@@ -93,18 +93,18 @@ if (isset($_SESSION['user_id'])) {
             <h2 class="section-title">
                 POPULAR ITEMS
                 <a href="#">
-                    <img src="../icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
+                    <img src="icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
                 </a>
             </h2>     
 
             <div class="orders-container scroll-container">
                 <div class="order-item">
                     <a href="#">
-                        <img src="../images/placeholder.png" alt="Popular item placeholder">
+                        <img src="images/placeholder.png" alt="Popular item placeholder">
                     </a>
 
                     <div class="add-icon">
-                        <img src="../icons/add-icon.png" alt="Add item to order">
+                        <img src="icons/add-icon.png" alt="Add item to order">
                     </div>
 
                     <div class="item-info">
@@ -117,11 +117,11 @@ if (isset($_SESSION['user_id'])) {
 
                 <div class="order-item">
                     <a href="#">
-                        <img src="../images/placeholder.png" alt="Popular item placeholder">
+                        <img src="images/placeholder.png" alt="Popular item placeholder">
                     </a>
 
                     <div class="add-icon">
-                        <img src="../icons/add-icon.png" alt="Add item to order">
+                        <img src="icons/add-icon.png" alt="Add item to order">
                     </div>
 
                     <div class="item-info">
@@ -134,11 +134,11 @@ if (isset($_SESSION['user_id'])) {
 
                 <div class="order-item">
                     <a href="#">
-                        <img src="../images/placeholder.png" alt="Popular item placeholder">
+                        <img src="images/placeholder.png" alt="Popular item placeholder">
                     </a>
 
                     <div class="add-icon">
-                        <img src="../icons/add-icon.png" alt="Add item to order">
+                        <img src="icons/add-icon.png" alt="Add item to order">
                     </div>
 
                     <div class="item-info">
@@ -150,9 +150,9 @@ if (isset($_SESSION['user_id'])) {
             </div>
 
 <!-- SCROLL -->
-            <div class="scroll-indicator">
+            <!-- <div class="scroll-indicator">
                 <div class="scroll-fill"></div>
-            </div>
+            </div> -->
         </section>
 
 <!-- CHEF'S FAVORITES SECTION | ADD PHP -->
@@ -160,18 +160,18 @@ if (isset($_SESSION['user_id'])) {
             <h2 class="section-title">
                 CHEF'S FAVORITES ITEMS
                 <a href="#">
-                    <img src="../icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
+                    <img src="icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
                 </a>
             </h2>     
 
             <div class="orders-container scroll-container">
                 <div class="order-item">
                     <a href="#">
-                        <img src="../images/placeholder.png" alt="Popular item placeholder">
+                        <img src="images/placeholder.png" alt="Popular item placeholder">
                     </a>
 
                     <div class="add-icon">
-                        <img src="../icons/add-icon.png" alt="Add item to order">
+                        <img src="icons/add-icon.png" alt="Add item to order">
                     </div>
 
                     <div class="item-info">
@@ -184,11 +184,11 @@ if (isset($_SESSION['user_id'])) {
 
                 <div class="order-item">
                     <a href="#">
-                        <img src="../images/placeholder.png" alt="Popular item placeholder">
+                        <img src="images/placeholder.png" alt="Popular item placeholder">
                     </a>
 
                     <div class="add-icon">
-                        <img src="../icons/add-icon.png" alt="Add item to order">
+                        <img src="icons/add-icon.png" alt="Add item to order">
                     </div>
 
                     <div class="item-info">
@@ -201,11 +201,11 @@ if (isset($_SESSION['user_id'])) {
 
                 <div class="order-item">
                     <a href="#">
-                        <img src="../images/placeholder.png" alt="Popular item placeholder">
+                        <img src="images/placeholder.png" alt="Popular item placeholder">
                     </a>
 
                     <div class="add-icon">
-                        <img src="../icons/add-icon.png" alt="Add item to order">
+                        <img src="icons/add-icon.png" alt="Add item to order">
                     </div>
 
                     <div class="item-info">
@@ -217,9 +217,9 @@ if (isset($_SESSION['user_id'])) {
             </div>
 
 <!-- SCROLL -->
-            <div class="scroll-indicator">
+            <!-- <div class="scroll-indicator">
                 <div class="scroll-fill"></div>
-            </div>
+            </div> -->
         </section>
 
 <!-- FAST AND CHEAP | ADD PHP -->
@@ -227,18 +227,18 @@ if (isset($_SESSION['user_id'])) {
             <h2 class="section-title">
                 FAST AND CHEAP
                 <a href="#">
-                    <img src="../icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
+                    <img src="icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
                 </a>
             </h2>     
 
             <div class="orders-container scroll-container">
                 <div class="order-item">
                     <a href="#">
-                        <img src="../images/placeholder.png" alt="Popular item placeholder">
+                        <img src="images/placeholder.png" alt="Popular item placeholder">
                     </a>
 
                     <div class="add-icon">
-                        <img src="../icons/add-icon.png" alt="Add item to order">
+                        <img src="icons/add-icon.png" alt="Add item to order">
                     </div>
 
                     <div class="item-info">
@@ -251,11 +251,11 @@ if (isset($_SESSION['user_id'])) {
 
                 <div class="order-item">
                     <a href="#">
-                        <img src="../images/placeholder.png" alt="Popular item placeholder">
+                        <img src="images/placeholder.png" alt="Popular item placeholder">
                     </a>
 
                     <div class="add-icon">
-                        <img src="../icons/add-icon.png" alt="Add item to order">
+                        <img src="icons/add-icon.png" alt="Add item to order">
                     </div>
 
                     <div class="item-info">
@@ -268,11 +268,11 @@ if (isset($_SESSION['user_id'])) {
 
                 <div class="order-item">
                     <a href="#">
-                        <img src="../images/placeholder.png" alt="Popular item placeholder">
+                        <img src="images/placeholder.png" alt="Popular item placeholder">
                     </a>
 
                     <div class="add-icon">
-                        <img src="../icons/add-icon.png" alt="Add item to order">
+                        <img src="icons/add-icon.png" alt="Add item to order">
                     </div>
 
                     <div class="item-info">
@@ -284,28 +284,28 @@ if (isset($_SESSION['user_id'])) {
             </div>
 
 <!-- SCROLL -->
-            <div class="scroll-indicator">
+            <!-- <div class="scroll-indicator">
                 <div class="scroll-fill"></div>
-            </div>
+            </div> -->
         </section>
     </main>
 
 <!-- FOOTER -->
     <nav class="footer-nav">
-        <a href="./index.html">
-            <img src="../icons/home-filled-icon.png" alt="Home" aria-label="Go to homepage">
+        <a href="guesthome.php">
+            <img src="icons/home-filled-icon.png" alt="Home" aria-label="Go to homepage">
         </a>
 
-        <a href="./menu.html">
-            <img src="../icons/menu-icon.png" alt="Menu" aria-label="View the menu">
+        <a href="menuguest.php">
+            <img src="icons/menu-icon.png" alt="Menu" aria-label="View the menu">
         </a>
 
-        <a href="./favorites.html">
-            <img src="../icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
+        <a href="favoritesguest.php">
+            <img src="icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
         </a>
 
-        <a href="./profile.html">
-            <img src="../icons/profile-icon.png" alt="Profile" aria-label="View profile">
+        <a href="profileguest.php">
+            <img src="icons/profile-icon.png" alt="Profile" aria-label="View profile">
         </a>
     </nav>
 

@@ -8,15 +8,15 @@ require '../config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- LINKS -->
-    <link rel="stylesheet" href="../css/loading.css">
-    <link rel="stylesheet" href="../fonts/font-face.css">
+    <link rel="stylesheet" href="css/loading.css">
+    <link rel="stylesheet" href="fonts/font-face.css">
 
 <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
+    <link rel="icon" type="image/x-icon" href="images/logo-lennox.png">
 
     <title>Landing</title>
 </head>
-<body style="background-image: url(../images/background-pattern.svg);">
+<body style="background-image: url(images/background-pattern.svg);">
 
 <!-- LOGIN & SIGNUP CONTAINER | ADD PHP -->
     <div class="login-container">
@@ -36,7 +36,7 @@ require '../config.php';
     <!-- GUEST OPTION | ADD PHP -->
         <section class="guest-option">
             <p>or 
-                <a href="./index.html" style="font-style: normal; color: var(--accent-color-two);">
+                <a href="guesthome.php" style="font-style: normal; color: var(--accent-color-two);">
                     <i>Continue as Guest</i>
                 </a>
             </p>

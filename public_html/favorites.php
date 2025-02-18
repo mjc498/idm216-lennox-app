@@ -9,11 +9,11 @@ require '../config.php';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- LINKS -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="fonts/font-face.css">
 
 <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
+    <link rel="icon" type="image/x-icon" href="images/logo-lennox.png">
 
     <title>Favorites</title>
 
@@ -24,7 +24,7 @@ require '../config.php';
     <header>
         <div class="header-container">
             <a href="#">
-                <img src="../icons/cart-icon.png" alt="Shopping cart icon with items" class="cart-icon">
+                <img src="icons/cart-icon.png" alt="Shopping cart icon with items" class="cart-icon">
             </a>
             <h1 class="hello-guest">FAVORITES</h1>
         </div>
@@ -38,11 +38,11 @@ require '../config.php';
         <div class="orders-container scroll-container">
             <div class="order-item">
                 <a href="#">
-                    <img src="../images/placeholder.png" class="food-image" alt="Food placeholder image">
+                    <img src="images/placeholder.png" class="food-image" alt="Food placeholder image">
                 </a>
 
                 <div class="add-icon">
-                    <img src="../icons/add-icon.png" alt="Add item to order">
+                    <img src="icons/add-icon.png" alt="Add item to order">
                 </div>
 
                 <div class="item-info">
