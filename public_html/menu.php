@@ -255,19 +255,19 @@ function menuItems($category) {
 
   <!-- FOOTER -->
   <nav class="footer-nav">
-        <a href="./index.html">
-            <img src="icons/home-icon.png" alt="Home" aria-label="Go to homepage">
+        <a href="home.php">
+            <img src="icons/home-filled-icon.png" alt="Home" aria-label="Go to homepage">
         </a>
 
-        <a href="./menu.html">
-            <img src="icons/menu-filled-icon.png" alt="Menu" aria-label="View the menu">
+        <a href="menu.php">
+            <img src="icons/menu-icon.png" alt="Menu" aria-label="View the menu">
         </a>
 
-        <a href="./favorites.html">
+        <a href="favorites.php">
             <img src="icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
         </a>
 
-        <a href="./profile.html">
+        <a href="profile.php">
             <img src="icons/profile-icon.png" alt="Profile" aria-label="View profile">
         </a>
     </nav>

@@ -2,7 +2,6 @@ CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,       
     email VARCHAR(255) UNIQUE NOT NULL,           
     password VARCHAR(255) NOT NULL,          
-    user_name VARCHAR(255) UNIQUE NOT NULL,   
     first_name VARCHAR(100),                      
     last_name VARCHAR(100),                       
     phone_number VARCHAR(20),                                     
@@ -139,11 +138,10 @@ VALUES
     ('Extra Cheese', '', '', 0.50, 'Add Ons', 100, 'images/test.jpg', 2),
     ('Add Egg', '', '', 1.00, 'Add Ons', 150, 'images/test.jpg', 5);
 
-INSERT INTO users (email, password, user_name, first_name, last_name, phone_number, signup_date)
+INSERT INTO users (email, password, first_name, last_name, phone_number, signup_date)
 VALUES (
     'admin@admin.com',
-    'Password',
-    'Admin', 
+    'Password', 
     'Admin',
     'User',
     '1234567890',

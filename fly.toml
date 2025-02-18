@@ -11,7 +11,7 @@ kill_timeout = '5s'
 [build]
 
 [env]
-  DATABASE_URL = 'postgres://postgres:HApKQDgMYZVEioU@lennox.flycast:5432'
+  DATABASE_URL = 'postgres://postgres:6TkqzmEZaj2KbyH@lennox-db.flycast:5432'
 
 [[mounts]]
   source = 'data'

@@ -17,7 +17,7 @@ RUN chown -R www-data:www-data /var/www/html
 RUN chmod -R 755 /var/www/html
 
 # Set the DATABASE_URL environment variable
-ENV DATABASE_URL=postgres://postgres:HApKQDgMYZVEioU@lennox.flycast:5432/lennox
+ENV DATABASE_URL "sqlite://:memory:"
 
 # Expose port 80
 EXPOSE 80

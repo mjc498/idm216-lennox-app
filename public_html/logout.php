@@ -1,6 +1,10 @@
 <?php
-session_start();
+include 'config.php';
+
+// Destroy the session
+session_unset();
 session_destroy();
-header('Location: adminPage.php');
+
+header('Location: index.php');
 exit;
 ?>
