@@ -46,7 +46,7 @@ if (!isset($_SESSION['user_id'])) {
 
     <!-- PROFILE INFORMATION SECTION | ADD PHP | SAVE FOR LOGGED IN USER -->
     <div class="profile-info">
-        <img src="../icons/profile-filled-icon.png" alt="Profile Picture" class="profile-pic">
+        <img src="icons/profile-filled-icon.png" alt="Profile Picture" class="profile-pic">
         <div class="profile-text">
             <p class="profile-name-bold">Name</p>
             <p class="profile-name">Ava Pham</p>
@@ -77,8 +77,8 @@ if (!isset($_SESSION['user_id'])) {
                 <div class="progress-fill"></div>
             </div>
             <p class="points-earned">
-                <img src="../icons/points-icon.png" alt="Star icon representing points" class="star-icon">
-                <strong>0 points earned. :(</strong>
+                <img src="icons/points-icon.png" alt="Star icon representing points" class="star-icon">
+                <strong>0 points earned. :</strong>
             </p>        
         </section>
     </a> 

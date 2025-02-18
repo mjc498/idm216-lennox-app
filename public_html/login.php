@@ -65,11 +65,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <form action="login.php" method="POST" id="loginForm">
         <label for="email" class="login-text">Email</label>
         <input type="email" id="email" name="email" required>
-        <span class="error">* <?php echo $userErr;?></span>
+        <span class="error"><?php echo $userErr;?></span>
 
         <label for="password" class="login-text">Password</label>
         <input type="password" id="password" name="password" required>
-        <span class="error">* <?php echo $passErr;?></span>
+        <span class="error"><?php echo $passErr;?></span>
 
         <button type="submit" class="button login-button">Login</button>
     </form>

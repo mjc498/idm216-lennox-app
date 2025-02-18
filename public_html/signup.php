@@ -126,11 +126,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     
                 </div>
             </div>
-            <span class="error">* <?php echo $nameErr;?></span>
+            <span class="error"><?php echo $nameErr;?></span>
             
             <label for="email" class="login-text">Email</label>
             <input type="email" id="email" name="email" require>
-            <span class="error">* <?php echo $emailErr;?></span>
+            <span class="error"><?php echo $emailErr;?></span>
 
             <div class="mobile">
                 <div class="input-group">
@@ -141,13 +141,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="input-group">
                     <label for="mobile-number" class="login-text">Mobile Number</label>
                     <input type="tel" id="mobile-number" name="mobile-number">
-                    <span class="error">* <?php echo $numErr;?></span>
+                    <span class="error"><?php echo $numErr;?></span>
                 </div>
             </div>
 
             <label for="password" class="login-text">Password</label>
             <input type="password" id="password" name="password" require>
-            <span class="error">* <?php echo $passwordErr;?></span>
+            <span class="error"><?php echo $passwordErr;?></span>
 
             <button type="submit" class="login-button">Create Account</button>
         </form>
