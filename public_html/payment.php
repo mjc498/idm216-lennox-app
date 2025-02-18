@@ -19,11 +19,11 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- LINKS -->
-    <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../fonts/font-face.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="fonts/font-face.css">
 
 <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
+    <link rel="icon" type="image/x-icon" href="images/logo-lennox.png">
     <title>Profile</title>
 
 </head>
@@ -31,7 +31,7 @@ if (!isset($_SESSION['user_id'])) {
 <!-- HEADER -->
     <header>
         <a href="#">
-            <img src="../icons/arrow-icon.png" alt="Left arrow" class="reverse-arrow-icon">
+            <img src="icons/arrow-icon.png" alt="Left arrow" class="reverse-arrow-icon">
         </a>
         <div class="header-container">
             <h1 class="hello-guest">PROFILE</h1>
@@ -40,9 +40,9 @@ if (!isset($_SESSION['user_id'])) {
 
     <main>
         <div class="profile-sections">
-            <a href="./profile.html" class="profile-link"><h2 class="profile-orders-title">Account</h2></a>
+            <a href="profile.php" class="profile-link"><h2 class="profile-orders-title">Account</h2></a>
             <h2 class="profile-account-title">Payment</h2>
-            <a href="./orders.html" class="profile-link"><h2 class="profile-orders-title">Orders</h2></a>
+            <a href="orders.php" class="profile-link"><h2 class="profile-orders-title">Orders</h2></a>
         </div>
 
 <!-- CREDIT CARD | ADD PHP -->
@@ -73,7 +73,7 @@ if (!isset($_SESSION['user_id'])) {
 <!-- VENMO | ADD PHP -->
         <div class="profile-underline"></div>
         <div class="profile-info">
-            <img src="../icons/profile-filled-icon.png" alt="Profile Picture" class="profile-pic">
+            <img src="icons/profile-filled-icon.png" alt="Profile Picture" class="profile-pic">
             <div class="profile-text">
                 <p class="profile-name-bold">Venmo</p>
                 <p class="profile-name">@uservenmoaccount</p>
@@ -83,28 +83,28 @@ if (!isset($_SESSION['user_id'])) {
 
 <!-- SAVE CHANGES | ADD PHP -->
         <div class="login-container">
-            <a href="./signup.html">
+            <a href="payment.php">
                 <button type="submit" class="signup-button">Save Changes</button>
             </a>
         </div>
     </main>
 
 <!-- FOOTER -->
-    <nav class="footer-nav">
-        <a href="./index.html">
-            <img src="../icons/home-icon.png" alt="Home" aria-label="Go to homepage">
+<nav class="footer-nav">
+        <a href="home.php">
+            <img src="icons/home-filled-icon.png" alt="Home" aria-label="Go to homepage">
         </a>
 
-        <a href="./menu.html">
-            <img src="../icons/menu-icon.png" alt="Menu" aria-label="View the menu">
+        <a href="menu.php">
+            <img src="icons/menu-icon.png" alt="Menu" aria-label="View the menu">
         </a>
 
-        <a href="./favorites.html">
-            <img src="../icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
+        <a href="favorites.php">
+            <img src="icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
         </a>
 
-        <a href="./profile.html">
-            <img src="../icons/profile-filled-icon.png" alt="Profile" aria-label="View profile">
+        <a href="profile.php">
+            <img src="icons/profile-icon.png" alt="Profile" aria-label="View profile">
         </a>
     </nav>
 

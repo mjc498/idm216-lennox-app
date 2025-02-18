@@ -130,9 +130,9 @@ function menuItems($category) {
             <?php menuItems($bahnMiResults); ?>
         </div>
         <!-- SCROLL | ADD JAVASCRIPT -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="scroll-fill"></div>
-        </div>
+        </div> -->
 
         <h2 class="section-title">
             Breakfast & Melts
@@ -144,9 +144,9 @@ function menuItems($category) {
             <?php menuItems($breakfastMeltsResults); ?>
         </div>
         <!-- SCROLL | ADD JAVASCRIPT -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="scroll-fill"></div>
-        </div>
+        </div> -->
 
 
         <h2 class="section-title">
@@ -159,9 +159,9 @@ function menuItems($category) {
             <?php menuItems($cheesesteaksResults); ?>
         </div>
         <!-- SCROLL | ADD JAVASCRIPT -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="scroll-fill"></div>
-        </div>
+        </div> -->
 
 
         <h2 class="section-title">
@@ -174,9 +174,9 @@ function menuItems($category) {
             <?php menuItems($burgersResults); ?>
         </div>
         <!-- SCROLL | ADD JAVASCRIPT -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="scroll-fill"></div>
-        </div>
+        </div> -->
 
 
         <h2 class="section-title">
@@ -189,9 +189,9 @@ function menuItems($category) {
             <?php menuItems($specialtySandwichesResults); ?>
         </div>
         <!-- SCROLL | ADD JAVASCRIPT -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="scroll-fill"></div>
-        </div>
+        </div> -->
 
 
 
@@ -205,9 +205,9 @@ function menuItems($category) {
             <?php menuItems($sandwichesResults); ?>
         </div>
         <!-- SCROLL | ADD JAVASCRIPT -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="scroll-fill"></div>
-        </div>
+        </div> -->
 
 
 
@@ -221,9 +221,9 @@ function menuItems($category) {
             <?php menuItems($plattersResults); ?>
         </div>
         <!-- SCROLL | ADD JAVASCRIPT -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="scroll-fill"></div>
-        </div>
+        </div> -->
 
 
         <h2 class="section-title">
@@ -236,9 +236,9 @@ function menuItems($category) {
             <?php menuItems($comboMealsResults); ?>
         </div>
         <!-- SCROLL | ADD JAVASCRIPT -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="scroll-fill"></div>
-        </div>
+        </div> -->
 
 
         <h2 class="section-title">
@@ -252,9 +252,9 @@ function menuItems($category) {
         
          </div>
          <!-- SCROLL | ADD JAVASCRIPT -->
-        <div class="scroll-indicator">
+        <!-- <div class="scroll-indicator">
             <div class="scroll-fill"></div>
-        </div>
+        </div> -->
 
     </section>
 

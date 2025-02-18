@@ -17,11 +17,11 @@ if (!isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- LINKS -->
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="fonts/font-face.css">
 
     <!-- FAVICON -->
-    <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
+    <link rel="icon" type="image/x-icon" href="images/logo-lennox.png">
 
     <title>Profile</title>
 
@@ -40,8 +40,8 @@ if (!isset($_SESSION['user_id'])) {
     <!-- PROFILE SECTIONS -->
     <div class="profile-sections">
         <h2 class="profile-account-title">Account</h2>
-        <a href="paymentguest.php" class="profile-link"><h2 class="profile-payment-title">Payment</h2></a>
-        <a href="ordersguest.php" class="profile-link"><h2 class="profile-orders-title">Orders</h2></a>
+        <a href="payment.php" class="profile-link"><h2 class="profile-payment-title">Payment</h2></a>
+        <a href="orders.php" class="profile-link"><h2 class="profile-orders-title">Orders</h2></a>
     </div>
 
     
@@ -75,19 +75,19 @@ if (!isset($_SESSION['user_id'])) {
 
     <!-- FOOTER -->
     <nav class="footer-nav">
-        <a href="guesthome.php">
+        <a href="home.php">
             <img src="icons/home-filled-icon.png" alt="Home" aria-label="Go to homepage">
         </a>
 
-        <a href="menuguest.php">
+        <a href="menu.php">
             <img src="icons/menu-icon.png" alt="Menu" aria-label="View the menu">
         </a>
 
-        <a href="favoritesguest.php">
+        <a href="favorites.php">
             <img src="icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
         </a>
 
-        <a href="profileguest.php">
+        <a href="profile.php">
             <img src="icons/profile-icon.png" alt="Profile" aria-label="View profile">
         </a>
     </nav>

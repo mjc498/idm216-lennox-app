@@ -152,9 +152,9 @@ if (!isset($_SESSION['user_id'])) {
             </div>
 
 <!-- SCROLL -->
-            <div class="scroll-indicator">
+            <!-- <div class="scroll-indicator">
                 <div class="scroll-fill"></div>
-            </div>
+            </div> -->
         </section>
 
 <!-- CHEF'S FAVORITES SECTION | ADD PHP -->
@@ -219,9 +219,9 @@ if (!isset($_SESSION['user_id'])) {
             </div>
 
 <!-- SCROLL -->
-            <div class="scroll-indicator">
+            <!-- <div class="scroll-indicator">
                 <div class="scroll-fill"></div>
-            </div>
+            </div> -->
         </section>
 
 <!-- FAST AND CHEAP | ADD PHP -->
@@ -286,9 +286,9 @@ if (!isset($_SESSION['user_id'])) {
             </div>
 
 <!-- SCROLL -->
-            <div class="scroll-indicator">
+            <!-- <div class="scroll-indicator">
                 <div class="scroll-fill"></div>
-            </div>
+            </div> -->
         </section>
     </main>
 
