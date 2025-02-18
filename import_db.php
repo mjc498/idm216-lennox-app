@@ -29,7 +29,6 @@ if (!$result) {
 $row = pg_fetch_assoc($result);
 
 if ($row['table_exists'] === 't') {  
-    echo "<script>console.log('Database schema already exists. Skipping import.');</script>";
 } else {
     if (file_exists($sqlFilePath)) {
         $sql = file_get_contents($sqlFilePath);

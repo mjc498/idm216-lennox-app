@@ -12,6 +12,7 @@ kill_timeout = '5s'
 
 [env]
   DATABASE_URL = 'postgres://postgres:6TkqzmEZaj2KbyH@lennox-db.flycast:5432'
+  DOCUMENT_ROOT = "/public_html"
 
 [[mounts]]
   source = 'data'

@@ -57,15 +57,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         // Insert user data into the database
-        $signUpQuery = "INSERT INTO users (email, password, first_name, last_name, phone_number, signup_date) VALUES ($1, $2, $3, $4, $5, NOW())";
+        $signUpQuery = "INSERT INTO users (email, password, first_name, last_name, phone_number, signup_date) 
+        VALUES ($1, $2, $3, $4, $5, NOW()) 
+        RETURNING user_id";
         $result = pg_query_params($conn, $signUpQuery, array($email, $password, $firstName, $lastName, $number));
 
+
+
         if ($result) {
-           echo "Data inserted successfully!";
-           header("Location: home.php");
-           exit();
+            // Fetch the new user's ID from the insert result
+            $user_id = pg_fetch_result($result, 0, 'user_id'); 
+        
+            // Start the session before setting session variables
+            session_start();  
+        
+            // Set session variables using form data (since $user array doesn't exist here)
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['email'] = $email;
+            $_SESSION['first_name'] = $firstName;
+            $_SESSION['last_name'] = $lastName;
+        
+            // Redirect to the home page
+            header("Location: home.php");
+            exit();
         } else {
-            echo "Error: " . pg_last_error($conn);
+            $errorMsg = "Error: " . pg_last_error($conn); 
         }
     }
 }
@@ -96,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
 
 <!-- SIGNUP CONTAINER | ADD PHP -->
-        <form action="signup.php" method="POST">
+        <form action="" method="POST">
             <div class="name-fields">
                 <div class="input-group">
                     <label for="first-name" class="login-text">First Name</label>

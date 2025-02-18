@@ -39,7 +39,7 @@ require '../config.php';
             
             setTimeout(function () {
                 document.body.style.opacity = "0";
-                setTimeout(() => window.location.href = "landing.html", 500);
+                setTimeout(() => window.location.href = "landing.php", 500);
             }, 2000);
         }, 100);
     });

@@ -1,9 +1,10 @@
 <?php 
+session_start();
 require '../config.php';
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
-    header('Location: index.php');
+    header('Location: loading.php');
     exit;
 }
 
