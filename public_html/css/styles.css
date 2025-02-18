@@ -11,7 +11,7 @@
 }
 
 /* ------------------------------------------ */
-/* TEXT */
+/* GENERAL STYLES */
 body {
     font-family: 'Moderat', sans-serif;
     background-color: var(--primary-bg-color);
@@ -27,9 +27,6 @@ h1 {
     font-family: 'Tusker Grotesk', sans-serif;
     font-size: 44px;
     color: var(--primary-font-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-top: 60px;
 }
 
@@ -37,24 +34,56 @@ a {
     text-decoration: none; 
 }
 
+/* ------------------------------------------ */
+/* HEADER */
 .section-title {
+    font-family: 'Tusker Grotesk', sans-serif;
     font-size: 24px; 
     color: var(--primary-font-color);
     margin: 30px 0;
     display: flex; 
     justify-content: space-between; 
-    align-items: center; 
-    width: 100%;
+}
+
+/* ------------------------------------------ */
+/* POINTS SECTION */
+.points-section {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.points-bar {
+    width: 412px;
+    height: 115px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115" fill="none"><path d="M300 95v10c-6 0-10 4-10 10H10c0-6-4-10-10-10V95c4 0 7-3 7-7s-3-7-7-7V72c4 0 7-3 7-7s-3-7-7-7V50c4 0 7-3 7-7s-3-7-7-7V28c4 0 7-3 7-7s-3-7-7-7V5c6 0 10-4 10-10h280c0 6 4 10 10 10v10c-4 0-7 3-7 7s3 7 7 7v10c-4 0-7 3-7 7s3 7 7 7v10c-4 0-7 3-7 7s3 7 7 7v10c-4 0-7 3-7 7s3 7 7 7z" fill="%23222222"/></svg>');
+    background-size: cover;
+    padding: 5px 15px 15px 30px;
+    text-align: center; 
+    color: var(--secondary-bg-color);
+}
+
+.points-earned {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+}
+
+.progress-bar {
+    height: 16px;
+    width: 291px; 
+    border-radius: 5px; 
+    background: var(--secondary-bg-color); 
+    margin: 10px auto; 
+}
+
+.free-text {
+    color: var(--accent-color-one);
 }
 
 /* ------------------------------------------ */
 /* ICONS */
-.cart-icon,
-.star-icon,
-.arrow-icon {
-    cursor: pointer;
-}
-
 .cart-icon {
     width: 32px;
     height: 32px;
@@ -74,68 +103,28 @@ a {
     height: 24px;
 }
 
+.cart-icon,
+.star-icon,
+.arrow-icon {
+    cursor: pointer;
+}
+
 .reverse-arrow-icon {
     width: 24px;
     height: 24px;
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 20px; 
     rotate: 180deg;
 }
 
 /* ------------------------------------------ */
-/* POINTS SECTION */
-.points-section {
-    display: flex;
-    justify-content: center;
-    text-decoration: none;
-}
-
-.points-bar {
-    width: 341px;
-    height: 115px;
-    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="115" viewBox="0 0 300 115" fill="none"><path d="M300 95v10c-6 0-10 4-10 10H10c0-6-4-10-10-10V95c4 0 7-3 7-7s-3-7-7-7V72c4 0 7-3 7-7s-3-7-7-7V50c4 0 7-3 7-7s-3-7-7-7V28c4 0 7-3 7-7s-3-7-7-7V5c6 0 10-4 10-10h280c0 6 4 10 10 10v10c-4 0-7 3-7 7s3 7 7 7v10c-4 0-7 3-7 7s3 7 7 7v10c-4 0-7 3-7 7s3 7 7 7v10c-4 0-7 3-7 7s3 7 7 7z" fill="%23222222"/></svg>');
-    background-size: cover;
-    padding: 5px 15px 15px 30px;
-    text-align: center; 
-    color: var(--secondary-bg-color);
-}
-
-.points-earned {
-    font-size: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    width: 100%; 
-}
-
-.points-number {
-    font-size: 30px; 
-    margin-right: 8px;
-}
-
-.progress-bar {
-    height: 16px;
-    width: 291px; 
-    max-width: 100%;
-    border-radius: 5px; 
-    background: var(--secondary-bg-color); 
-    position: relative;
-    overflow: hidden;
-    margin: 10px auto; 
-}
-
-.free-text {
-    color: var(--accent-color-one);
-}
-
-/* ------------------------------------------ */
-/* PREVIOUS ORDERS | POPULAR ITEMS */
+/* FOOD CARDS */
 .orders-container {
     display: flex;
     overflow-x: auto;
     gap: 15px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
     overflow: visible;
 }
 
@@ -153,31 +142,59 @@ a {
     display: block;
 }
 
-.order-item .item-info {
+.item-info {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start; 
     padding-right: 15px;
 }
 
-.order-item h3 {
-    font-size: 14px;
-    margin: 4px 0 0;    
+.item-info .category {
+    color: #4F4F4F;
+    font-size: 11px;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.item-info .title {
+    font-size: 16px;
     font-weight: bold;
+    margin: 0;
 }
 
-.order-item .price {
-    font-size: 12px;
+.item-info .price {
+    font-size: 14px;
     color: var(--primary-font-color);
+    margin: 0 0 2px;
 }
 
-.order-item p {
+.item-info .description {
     font-size: 10px;
-    margin: 5px 0;
+    margin: 0;
 }
 
-.last-order {
+.item-info .last-order {
     color: var(--accent-color-one);
+    font-size: 10px;
+    margin: 20px;
+}
+
+/* ------------------------------------------ */
+/* SCROLL */
+.scroll-indicator {
+    width: 60px; 
+    height: 7px;  
+    background-color: #D9D9D9;  
+    border-radius: 20px;  
+    position: relative;
+    margin: 0 auto 10px;  
+}
+
+.scroll-fill {
+    width: 30%; 
+    height: 100%;
+    background-color: var(--primary-font-color);  
+    border-radius: 20px;  
 }
 
 /* ------------------------------------------ */
@@ -205,7 +222,7 @@ a {
 }
 
 /* ------------------------------------------ */
-/* FILTER BUTTON */
+/* MENU */
 .menu-page .filter-buttons-wrapper {
     margin-top: -20px; 
 }
@@ -214,6 +231,8 @@ a {
     margin-bottom: 15px;
 }
 
+/* ------------------------------------------ */
+/* FILTERS */
 .filter-buttons-wrapper {
     display: flex;
     gap: 10px; 
@@ -247,60 +266,135 @@ a {
 }
 
 /* ------------------------------------------ */
-/* SCROLL */
-.scroll-indicator {
-    width: 60px; 
-    height: 7px;  
-    background-color: #D9D9D9;  
-    border-radius: 20px;  
-    position: relative;
-    margin: 0 auto 10px;  
+/* CATEGORY PAGES */
+.category-page .orders-container {
+    display: flex;
+    flex-direction: column;
+    margin: 24px 24px 15px 24px ;
+    width: 337px;
 }
 
-.scroll-fill {
-    width: 30%; 
-    height: 100%;
-    background-color: var(--primary-font-color);  
-    border-radius: 20px;  
+.category-page .food-image {
+    width: 110px;
+    height: 110px;
+    border-radius: 5px;
+    border: 2px solid var(--lennox-tan, #FDF9F1);
+}
+
+.category-page .item-info {
+    min-width: 150px; 
+}
+
+.category-page .order-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+.category-page .title {
+        font-size: 18px;
+        font-weight: bold;
+        color: var(--primary-font-color);
+        margin-bottom: 7px; 
+}
+
+.category-page .calories {
+    color: #4F4F4F;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+ 
+.category-page .prep-time {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #4F4F4F;
+    font-size: 12px;
+    font-weight: 400;
+    margin-bottom: 7px; 
+    white-space: nowrap;
+}
+
+.category-page .counter-price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+.category-page .price {
+    font-size: 14px;
+    color: var(--primary-font-color);
+    text-align: right;
+    min-width: 190px; 
+    white-space: nowrap;
+}
+
+.category-page .profile-underline {
+    width: 404px;
+    height: 1px;
+    background-color: var(--primary-font-color);
+    margin: 10px auto;
 }
 
 /* ------------------------------------------ */
-/* ACCOUNT | PAYMENT | ORDERS */
+/* COUNTER BUTTON */
+.counter-container {
+    display: flex;
+    align-items: center;
+    background-color: var(--primary-font-color);
+    border-radius: 10px;
+    width: 87px;
+    height: 23px;
+    justify-content: center;
+}
+
+.counter-button {
+    background-color: transparent;
+    color: var(--secondary-bg-color);
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#counterValue {
+    font-size: 14px;
+    color: var(--secondary-bg-color);
+    flex: 1;
+    text-align: center;
+}
+
+/* ------------------------------------------ */
+/* PROFILE */
 .profile-sections {
     display: flex;
     justify-content: space-around;
     margin: 2px;
 }
 
-.profile-account-title,
-.profile-payment-title,
-.profile-orders-title {
+.profile-sections h2 {
     font-size: 14px;
     text-align: center;
     cursor: pointer;
-    position: relative;
-    color: #7F7D79; 
+    color: #7F7D79;
 }
 
-.profile-account-title {
-    color: var(--primary-font-color);
-}
-
-.profile-link {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ------------------------------------------ */
-/* PROFILE UNDERLINES */
-.profile-account-title::after,
-.profile-payment-title::after,
-.profile-orders-title::after {
+.profile-sections h2::after {
     content: "";
     display: block;
     width: 102px;
     height: 2px;
     margin: 15px auto 0;
+}
+
+.profile-account-title {
+    color: var(--primary-font-color);
 }
 
 .profile-account-title::after {
@@ -312,69 +406,13 @@ a {
     background-color: #7F7D79;
 }
 
-.profile-underline,
-.profile-underline-email {
-    width: 80%;
-    height: 1px;
-    background-color: var(--primary-font-color);
-    margin: 10px auto 0;
-}
 
-.profile-underline-email {
-    margin-bottom: 32px;
-}
-
-.profile-underline {
-    margin-bottom: 12px;
+.profile-link {
+    text-decoration: none;
 }
 
 /* ------------------------------------------ */
-/* ACCOUNT SECTION */
-.profile-info,
-.profile-info-number,
-.profile-info-email {
-    display: flex;
-    align-items: center;
-    padding-left: 48px;
-    padding-right: 10px;
-    padding-bottom: 4px;
-    gap: 15px;
-}
-
-.profile-info-number,
-.profile-info-email {
-    padding-top: 8px; 
-    padding-bottom: 2px !important; 
-}
-
-.profile-pic {
-    width: 72px; 
-    height: 72px;
-    border-radius: 50%;
-    object-fit: cover;
-    background-color: var(--accent-color-two);
-}
-
-.profile-text {
-    display: flex;
-    flex-direction: column;
-    gap: 4px; 
-}
-
-.profile-name-bold {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 2px; 
-}
-
-.profile-name {
-    font-size: 14px;
-    color: #7F7D79;
-    margin-top: 0; 
-    line-height: 1.1; 
-}
-
-/* ACCOUNT SECTION LOGIN */
+/* PROFILE - ACCOUNT - GUEST */
 .login-icon {
     width: 110px;
     height: 110px;
@@ -394,29 +432,24 @@ a {
     text-align: center;
     font-family: 'Tusker Grotesk', sans-serif;
     font-size: 24px;
-
     margin-bottom: 25px;
 }
 
-/* ------------------------------------------ */
-/* LOGIN & SIGNUP BUTTONS */
 .login-button {
     width: 275px;
     height: 58px;
-    padding: 10px;
     background-color: var(--primary-font-color);
     color: var(--secondary-bg-color);
     border-radius: 10px;
     cursor: pointer;
-    font-size: 22px;
-    display: block;
-    margin: 10px auto 19px;    
+    font-size: 22px;  
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+    display: block;
+    margin: 10px auto 19px;  
 }
 
 .login-button:hover {
     background-color: var(--primary-button-color);
-    border: 1px solid var(--secondary-bg-color);
     color: var(--primary-font-color);
 }
 
@@ -440,13 +473,45 @@ a {
 }
 
 /* ------------------------------------------ */
-/* PAYMENT SECTION */
+/* PROFILE - ACCOUNT - LOGGED IN */
+.profile-info,
+.profile-info-number,
+.profile-info-email {
+    display: flex;
+    align-items: center;
+    padding-left: 48px;
+    padding-right: 10px;
+    padding-bottom: 4px;
+    gap: 15px;
+}
+
+.profile-info-number,
+.profile-info-email {
+    padding-top: 8px; 
+    padding-bottom: 2px !important; 
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px; 
+}
+
+.profile-name {
+    font-size: 14px;
+    color: #7F7D79;
+    margin-top: 0; 
+    line-height: 1.1; 
+}
+
+
+/* ------------------------------------------ */
+/* PROFILE - PAYMENT */
 .card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 16px !important;
-    margin-bottom: 18px;
+    margin: 16px 0 18px;
 }
 
 .card-title,
@@ -456,17 +521,17 @@ a {
 }
 
 .card-title {
-    color: black;
     margin-left: 40px;
 }
 
 .add-card {
-    font-size: 14px;
     color: var(--accent-color-one);
     cursor: pointer;
     margin-right: 40px;
 }
 
+/* ------------------------------------------ */
+/* CREDIT CARD */
 .credit-card-container {
     width: 335px;
     height: 185px;
@@ -490,26 +555,42 @@ a {
 .card-number {
     color: var(--secondary-bg-color);
     font-size: 16px;
+    margin-bottom: 0;
 }
 
-.credit-text {
-    font-family: Ubuntu, sans-serif;
-    opacity: 0.9;
-}
-
-.card-logo svg {
-    width: 48px;
-    height: 48px;
+.card-user {
+    font-family: "IBM Plex Mono", monospace;
 }
 
 .card-details {
     margin-top: 51px;
 }
 
-.card-user,
-.card-number {
-    font-family: "IBM Plex Mono", monospace;
-    margin-bottom: 0;
+/* ------------------------------------------ */
+/* VENMO */
+.profile-pic {
+    width: 72px; 
+    height: 72px;
+    border-radius: 50%;
+    background-color: var(--accent-color-two);
+}
+
+.profile-name-bold {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 2px; 
+}
+
+.profile-underline,
+.profile-underline-email {
+    width: 80%;
+    height: 1px;
+    background-color: var(--primary-font-color);
+    margin: 10px auto 0;
+}
+
+.profile-underline {
+    margin-bottom: 12px;
 }
 
 /* ------------------------------------------ */
@@ -530,8 +611,4 @@ a {
     width: 24px;
     height: 24px;
     padding: 10px;
-}
-
-.footer-nav img:hover {
-    background-color: #161616; 
 }

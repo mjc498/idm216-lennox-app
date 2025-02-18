@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- LINKS -->
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../fonts/font-face.css">
+
+<!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
+    <title>Menu</title>
+
+</head>
+<body class="category-page">
+<!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <a href="./menu.html">
+                <img src="../icons/arrow-icon.png" alt="Left arrow" class="reverse-arrow-icon">
+            </a>
+            <a href="#">
+                <img src="../icons/cart-icon.png" alt="Shopping cart icon with items" class="cart-icon">
+            </a>
+            <h1 class="hello-guest">BANH MI</h1>
+        </div>
+    </header>
+
+<main>
+    <section>
+        <div class="orders-container">
+            <div class="order-item">
+                <img src="../images/placeholder.png" class="food-image" alt="Original Banh Mi">
+                <div class="item-info">
+                    <h3 class="title">Original Banh Mi</h3>
+                    <p class="calories">550 kcal</p>
+                        <div class="prep-time">
+                            <span>⏳ 7 min</span>
+                        </div>
+                        <div class="counter-price-container">
+                            <div class="counter-container">
+                                <button id="decreaseBtn" class="counter-button">-</button>
+                                <span id="counterValue">0</span>
+                                <button id="increaseBtn" class="counter-button">+</button>
+                            </div>
+                            <p class="price">$9.00</p>
+                        </div>                        
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="profile-underline"></div>
+</main>
+
+<!-- FOOTER -->
+    <nav class="footer-nav">
+        <a href="./index.html">
+            <img src="../icons/home-icon.png" alt="Home" aria-label="Go to homepage">
+        </a>
+
+        <a href="./menu.html">
+            <img src="../icons/menu-filled-icon.png" alt="Menu" aria-label="View the menu">
+        </a>
+
+        <a href="./favorites.html">
+            <img src="../icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
+        </a>
+
+        <a href="./profile.html">
+            <img src="../icons/profile-icon.png" alt="Profile" aria-label="View profile">
+        </a>
+    </nav>
+
+</body>
+</html>
+
+<!-- SCRIPT -->
+ <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const decreaseBtn = document.getElementById("decreaseBtn");
+    const increaseBtn = document.getElementById("increaseBtn");
+    const counterValue = document.getElementById("counterValue");
+
+    let count = 0; 
+
+    increaseBtn.addEventListener("click", () => {
+        count++;
+        counterValue.textContent = count;
+    });
+
+    decreaseBtn.addEventListener("click", () => {
+        if (count > 0) {
+            count--;
+            counterValue.textContent = count;
+        }
+    });
+});
+ </script>
