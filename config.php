@@ -18,7 +18,7 @@ if (!$database_url) {
 
 // Parse the DATABASE_URL into components
 $url = parse_url($database_url);
-echo "DATABASE_URL: " . $database_url;
+
 // Ensure the keys exist to avoid undefined warnings
 $host = isset($url["host"]) ? $url["host"] : 'localhost';
 $port = isset($url["port"]) ? $url["port"] : '5432';
