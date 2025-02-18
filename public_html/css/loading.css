@@ -11,16 +11,6 @@
 }
 
 /* ------------------------------------------ */
-/* FONTS */
-@font-face {
-    font-family: 'Tusker Grotesk';
-    src: url('../fonts/TuskerGrotesk-Regular.woff2') format('woff2'),
-         url('../fonts/TuskerGrotesk-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* ------------------------------------------ */
 /* GENERAL STYLES */
 * {
     margin: 0;
@@ -33,134 +23,76 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: var(--primary-bg-color);
     font-family: 'Moderat', sans-serif;
+    background-image: url(../images/background-pattern.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-/* ------------------------------------------ */
-/* HEADINGS */
-h1 {
+h1, h2 {
     font-family: 'Tusker Grotesk', sans-serif;
+    text-align: center;
+}
+
+h1 {
     font-size: 70px;
-    text-align: center !important;
     letter-spacing: -1.4px;
 }
 
 h2 {
-    font-family: 'Tusker Grotesk', sans-serif;
     font-size: 46px;
     margin-bottom: 28px;
-    text-align: center !important;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin: 5px auto 24px;
+    background-color: var(--primary-bg-color);
+    border: 1px solid var(--primary-font-color);
+    border-radius: 10px;
+    color: #726E6E;
 }
 
 /* ------------------------------------------ */
-/* LOGIN */
+/* LOADING */
+.blur-container {
+    backdrop-filter: blur(1px); 
+}
+
+/* ------------------------------------------ */
+/* LANDING */
 .login-container {
     max-width: 275px;
-    text-align: left;
-}
-
-.login-text {
-    font-family: 'Moderat', sans-serif;
-    font-size: 16px;
-    color: var(--primary-font-color);
-    text-align: left;
-}
-
-/* ------------------------------------------ */
-/* SIGNUP */
-.signup-button {
-    background-color: var(--primary-bg-color) !important;
-    color: var(--primary-font-color) !important;
-}
-
-.create-account-button {
-    background-color: var(--primary-font-color) !important;
-    color: var(--secondary-bg-color) !important;
-}
-
-/* ------------------------------------------ */
-/* LOGIN & SIGNUP BUTTON STYLES */
-.login-button {
-    background-color: var(--primary-font-color) !important;
-    color: var( --secondary-bg-color) !important;
-}
-
-.signup-container {
-    max-width: 300px;
-    text-align: left;
-}
-
-.name-fields {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.mobile {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-}
-
-.input-group {
-    flex: 1;
-}
-
-.signup-button {
-    width: 100%;
-    height: 58px;
-    padding: 10px;
-    background-color: var(--primary-font-color);
-    color: var(--secondary-bg-color);
-    border: 1px solid var(--primary-font-color);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 22px;
-    margin-top: 10px;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-    margin-bottom: -1px;
-}
-
-.create-account-button {
-    width: 100%;
-    height: 58px;
-    padding: 10px;
-    background-color: var(--primary-font-color);
-    color: var(--secondary-bg-color);
-    border: 1px solid var(--primary-font-color);
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 22px;
-    margin-top: 10px;
-    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
-    margin-bottom: -1px;
+    text-align: center;
 }
 
 .login-button {
-    width: 100%;
+    width: 275px;
     height: 58px;
-    padding: 10px;
     background-color: var(--primary-font-color);
     color: var(--secondary-bg-color);
-    border: 1px solid var(--primary-font-color);
     border-radius: 10px;
     cursor: pointer;
     font-size: 22px;
-    margin-top: 10px;
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .login-button:hover {
-    background-color: var(--primary-button-color) !important;
-    border: 1px solid var(--secondary-bg-color);
-    color: var(--primary-font-color) !important;
+    background-color: var(--primary-button-color);
+    color: var(--primary-font-color);
 }
 
-.create-account-button:hover {
-    background-color: var(--primary-button-color) !important;
-    border: 1px solid var(--secondary-bg-color);
-    color: var(--primary-font-color) !important;
+.signup-button {
+    width: 275px;
+    height: 58px;
+    background-color: var(--primary-bg-color);
+    color: var(--primary-font-color);
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 22px;
+    margin-top: 19px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
 .signup-button:hover {
@@ -168,45 +100,48 @@ h2 {
     border: 1px solid var(--secondary-bg-color);
 }
 
-/* ------------------------------------------ */
-/* GUEST OPTION */
 .guest-option {
-    text-align: center;
-    font-size: 14px;
-    margin-top: 18px;
-    font-family: 'Moderat', sans-serif;
-}
-
-.guest-option p {
-    text-align: center;
-}
-
-.guest-option i {
-    color: var(--accent-color-two);
+    font-size: 18px;
+    margin-top: 19px;
 }
 
 .guest-option a {
     text-decoration: none;
 }
 
-/* ------------------------------------------ */
-/* FORM ELEMENTS */
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid var(--primary-font-color);
-    border-radius: 10px;
-    font-size: 12px;
-    font-family: 'Moderat', sans-serif;
-    background-color: var(--primary-bg-color);
-    color: #726E6E;
-    margin-top: 5px;
-    margin-bottom: 15px;
+.guest-option i {
+    color: var(--accent-color-two);
 }
 
 /* ------------------------------------------ */
-/* BLUR CONTAINER */
-.blur-container {
-    backdrop-filter: blur(1px); 
+/* LOGIN */
+.login-page .login-text {
+    text-align: left;
+    display: block;
+}
+
+.login-page .guest-option {
+    font-size: 14px;
+}
+
+#country {
+    width: 80px;
+    text-align: center; 
+}
+
+#mobile-number {
+    width: 185px;
+}
+
+/* ------------------------------------------ */
+/* SIGNUP */
+.name-fields, .mobile {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+}
+
+.input-group {
+    flex: 1;
 }

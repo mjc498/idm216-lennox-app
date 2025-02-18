@@ -11,16 +11,6 @@
 }
 
 /* ------------------------------------------ */
-/* FONTS */
-@font-face {
-    font-family: 'Tusker Grotesk';
-    src: url('../fonts/TuskerGrotesk-Regular.woff2') format('woff2'),
-         url('../fonts/TuskerGrotesk-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/* ------------------------------------------ */
 /* TEXT */
 body {
     font-family: 'Moderat', sans-serif;
@@ -333,6 +323,11 @@ a {
 .profile-underline-email {
     margin-bottom: 32px;
 }
+
+.profile-underline {
+    margin-bottom: 12px;
+}
+
 /* ------------------------------------------ */
 /* ACCOUNT SECTION */
 .profile-info,
@@ -446,7 +441,76 @@ a {
 
 /* ------------------------------------------ */
 /* PAYMENT SECTION */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px !important;
+    margin-bottom: 18px;
+}
 
+.card-title,
+.add-card {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card-title {
+    color: black;
+    margin-left: 40px;
+}
+
+.add-card {
+    font-size: 14px;
+    color: var(--accent-color-one);
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.credit-card-container {
+    width: 335px;
+    height: 185px;
+    margin: 0 auto 25px;
+}
+
+.credit-card {
+    background: linear-gradient(135deg, #0F172A 0%, #1E40AF 50%, #3B82F6 100%);
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.credit-text,
+.card-user,
+.card-number {
+    color: var(--secondary-bg-color);
+    font-size: 16px;
+}
+
+.credit-text {
+    font-family: Ubuntu, sans-serif;
+    opacity: 0.9;
+}
+
+.card-logo svg {
+    width: 48px;
+    height: 48px;
+}
+
+.card-details {
+    margin-top: 51px;
+}
+
+.card-user,
+.card-number {
+    font-family: "IBM Plex Mono", monospace;
+    margin-bottom: 0;
+}
 
 /* ------------------------------------------ */
 /* FOOTER */

@@ -6,17 +6,14 @@
 
 <!-- LINKS -->
     <link rel="stylesheet" href="../css/loading.css">
-     <!-- USE THIS HREF FOR LOCAL -->
-     <link rel="stylesheet" href="http://127.0.0.1:5500/fonts/font-face.css">
+    <link rel="stylesheet" href="../fonts/font-face.css">
 
 <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
-
     <title>Login</title>
 
 </head>
-<body style="background-image: url(../images/background-pattern.svg);">
-
+<body class="login-page">
     <div class="login-container">
         <div class="blur-container">
             <h1 style="color: var(--accent-color-one)">LENNOX</h1>
@@ -24,25 +21,24 @@
         </div>
 
 <!-- LOGIN CONTAINER | ADD PHP -->
-        <form action="login.php" method="POST">
-            <label for="email" class="login-text">Email</label>
-            <input type="email" id="email" name="email">
+    <form action="login.php" method="POST">
+        <label for="email" class="login-text">Email</label>
+        <input type="email" id="email" name="email" required>
 
-            <label for="password" class="login-text">Password</label>
-            <input type="password" id="password" name="password">
+        <label for="password" class="login-text">Password</label>
+        <input type="password" id="password" name="password" required>
 
-            <a href="/"><button type="submit" class="login-button">Login</button></a>
-        </form>
+        <button type="submit" class="button login-button">Login</button>
+    </form>
 
-        <!-- GUEST OPTION | ADD PHP -->
+<!-- GUEST OPTION | ADD PHP -->
         <section class="guest-option">
             <p>Don't have an account? 
                 <a href="signup.html" style="font-style: normal; color: var(--accent-color-two);"> <!-- ADD PHP FOR SIGN UP -->
-                    Register Now
+                    Register Now!
                 </a>
             </p>
         </section>
     </div>
-
 </body>
 </html>

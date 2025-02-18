@@ -6,37 +6,12 @@
 
 <!-- LINKS -->
     <link rel="stylesheet" href="../css/loading.css">
-     <!-- USE THIS HREF FOR LOCAL -->
-     <link rel="stylesheet" href="http://127.0.0.1:5500/fonts/font-face.css">
+    <link rel="stylesheet" href="../fonts/font-face.css">
 
 <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
 
     <title>Loading...</title>
-
-<!-- SCRIPT -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            document.body.style.opacity = "1";
-    
-            setTimeout(function () {
-                let fadeEffect = setInterval(function () {
-                    if (!document.body.style.opacity) {
-                        document.body.style.opacity = "1";
-                    }
-                    if (document.body.style.opacity > "0") {
-                        document.body.style.opacity -= "0.1"; 
-                    } else {
-                        clearInterval(fadeEffect);
-                        window.location.href = "landing.html"; 
-                    }
-                }, 50); 
-            }, 2000); 
-        });
-    
-        document.body.style.opacity = "0";
-        document.body.style.transition = "opacity 0.5s ease-in-out";
-    </script>
     
 </head>
 <body style="background-image: url(../images/background-pattern.svg);">
@@ -46,5 +21,22 @@
         <h1 style="color: var(--accent-color-one)">LENNOX</h1>
         <h2>GOT LUNCH</h2>
     </div>
+
 </body>
 </html>
+
+<!-- SCRIPT -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.style.opacity = "0";
+        setTimeout(function () {
+            document.body.style.transition = "opacity 0.5s ease-in-out"; 
+            document.body.style.opacity = "1";
+            
+            setTimeout(function () {
+                document.body.style.opacity = "0";
+                setTimeout(() => window.location.href = "landing.html", 500);
+            }, 2000);
+        }, 100);
+    });
+</script>

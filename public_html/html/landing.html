@@ -6,8 +6,7 @@
 
 <!-- LINKS -->
     <link rel="stylesheet" href="../css/loading.css">
-     <!-- USE THIS HREF FOR LOCAL -->
-    <link rel="stylesheet" href="http://127.0.0.1:5500/fonts/font-face.css">
+    <link rel="stylesheet" href="../fonts/font-face.css">
 
 <!-- FAVICON -->
     <link rel="icon" type="image/x-icon" href="../images/logo-lennox.png">
@@ -31,10 +30,10 @@
             <button type="submit" class="signup-button">Sign up</button>  <!-- ADD PHP FOR SIGN UP -->
         </a>
 
-<!-- GUEST OPTION | ADD PHP -->
+    <!-- GUEST OPTION | ADD PHP -->
         <section class="guest-option">
             <p>or 
-                <a href="#" style="font-style: normal; color: var(--accent-color-two);">
+                <a href="./index.html" style="font-style: normal; color: var(--accent-color-two);">
                     <i>Continue as Guest</i>
                 </a>
             </p>
@@ -43,3 +42,27 @@
 
 </body>
 </html>
+
+<!-- SCRIPT -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        document.body.style.opacity = "0";
+        document.body.style.transition = "opacity 0.5s ease-in-out"; 
+        setTimeout(() => {
+            document.body.style.opacity = "1"; 
+        }, 50);
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (!sessionStorage.getItem("hasSeenLoading")) {
+            sessionStorage.setItem("hasSeenLoading", "true");
+            window.location.href = "loading.html";
+        } else {
+            document.body.style.opacity = "0";
+            document.body.style.transition = "opacity 0.5s ease-in-out";
+            setTimeout(() => {
+                document.body.style.opacity = "1";
+            }, 50);
+        }
+    });
+</script>
