@@ -81,6 +81,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     Register Now!
                 </a>
             </p>
+            <p>or 
+                <a href="guesthome.php" style="font-style: normal; color: var(--accent-color-two);">
+                    <i>continue as Guest</i>
+                </a>
+            </p>
+        
         </section>
     </div>
 </body>
