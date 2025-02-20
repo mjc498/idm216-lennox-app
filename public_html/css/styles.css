@@ -129,7 +129,7 @@ button a {
 /* FOOD CARDS */
 .orders-container {
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
     gap: 15px;
     padding-bottom: 8px;
 
@@ -932,7 +932,7 @@ button a {
 }
 
 .order-item {
-    display: flex;
+
     align-items: center;
     justify-content: space-between;
     width: 380px;
