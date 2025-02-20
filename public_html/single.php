@@ -71,6 +71,7 @@
                 <textarea class="notes-textarea" placeholder="Let us know if you have any allergies or extra requests here."></textarea>
             </div>
         </div>
+        <button type="submit" class="button login-button"><a href="./cart.html">Add to Cart</a></button>
     </main>
 
     <!-- FOOTER -->
