@@ -1,13 +1,7 @@
 <?php 
-session_start();
 require '../config.php';
-
-// Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
-    header('Location: loading.php');
-    exit;
-}
-
+require 'entry.php';
+require 'menulogic.php';
 
 ?>
 
@@ -30,15 +24,7 @@ if (!isset($_SESSION['user_id'])) {
 </head>
 <body>
 
-<!-- HEADER -->
-    <header>
-        <div class="header-container">
-            <a href="#">
-                <img src="icons/cart-icon.png" alt="Shopping cart icon with items" class="cart-icon">
-            </a>
-            <h1 class="hello-guest">HELLO, <?php echo $_SESSION['first_name']; ?></h1>
-        </div>
-    </header>
+
 
 <!-- MAIN CONTENT -->
     <main>
@@ -52,43 +38,17 @@ if (!isset($_SESSION['user_id'])) {
             </div>
             <p class="points-earned">
                 <img src="icons/points-icon.png" alt="Star icon representing points" class="star-icon">
-                <strong>0 points earned. :(</strong>
+                <strong>0 points earned. :</strong>
             </p>        
         </section>
     </a>
 
-<!-- PREVIOUS ORDERS SECTION | ADD PHP | SAVE FOR LOGGED IN USER -->
-        <!-- <section>
-            <h2 class="section-title">
-                PREVIOUS ORDERS
-                <a href="#">
-                    <img src="../icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
-                </a>
-            </h2>
-
-            <div class="orders-container scroll-container">
-                <div class="order-item">
-                    <a href="#">
-                        <img src="../images/placeholder.png" class="food-image" alt="Food placeholder image">
-                    </a>
-
-                    <div class="add-icon">
-                        <img src="../icons/add-icon.png" alt="Add item to order">
-                    </div>
-
-                    <div class="item-info">
-                        <h3>Title</h3>
-                        <p class="price">$</p>
-                    </div>
-                    <p class="last-order">Last ordered on...</p>
-                </div>
-            </div> -->
-
-<!-- SCROLL | ADD JAVASCRIPT | SAVE FOR LOGGED IN USER -->
-            <!-- <div class="scroll-indicator">
-                <div class="scroll-fill"></div>
-            </div>
-        </section> -->
+    <!-- PREVIOUS ORDERS SECTION | -->
+    <?php 
+    if (isset($_SESSION['user_id'])) {
+        require('logged_in_content.php');
+    }
+    ?>
   
 <!-- POPULAR ITEMS SECTION | ADD PHP -->
         <section>
@@ -98,60 +58,10 @@ if (!isset($_SESSION['user_id'])) {
                     <img src="icons/arrow-icon.png" alt="Right arrow" class="arrow-icon">
                 </a>
             </h2>     
-
             <div class="orders-container scroll-container">
-                <div class="order-item">
-                    <a href="#">
-                        <img src="images/placeholder.png" alt="Popular item placeholder">
-                    </a>
-
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item to order">
-                    </div>
-
-                    <div class="item-info">
-                        <h3>Title</h3>
-                        <p class="price">$</p>
-                    </div>
-                    <p>Description of item</p>
-                </div>
-
-
-                <div class="order-item">
-                    <a href="#">
-                        <img src="images/placeholder.png" alt="Popular item placeholder">
-                    </a>
-
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item to order">
-                    </div>
-
-                    <div class="item-info">
-                        <h3>Title</h3>
-                        <p class="price">$</p>
-                    </div>
-                    <p>Description of item</p>
-                </div>
-
-
-                <div class="order-item">
-                    <a href="#">
-                        <img src="images/placeholder.png" alt="Popular item placeholder">
-                    </a>
-
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item to order">
-                    </div>
-
-                    <div class="item-info">
-                        <h3>Title</h3>
-                        <p class="price">$</p>
-                    </div>
-                    <p>Description of item</p>
-                </div>
+            <?php menuItems($popularResults); ?>
             </div>
-
-<!-- SCROLL -->
+            
             <!-- <div class="scroll-indicator">
                 <div class="scroll-fill"></div>
             </div> -->
@@ -167,57 +77,8 @@ if (!isset($_SESSION['user_id'])) {
             </h2>     
 
             <div class="orders-container scroll-container">
-                <div class="order-item">
-                    <a href="#">
-                        <img src="images/placeholder.png" alt="Popular item placeholder">
-                    </a>
-
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item to order">
-                    </div>
-
-                    <div class="item-info">
-                        <h3>Title</h3>
-                        <p class="price">$</p>
-                    </div>
-                    <p>Description of item</p>
-                </div>
-
-
-                <div class="order-item">
-                    <a href="#">
-                        <img src="images/placeholder.png" alt="Popular item placeholder">
-                    </a>
-
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item to order">
-                    </div>
-
-                    <div class="item-info">
-                        <h3>Title</h3>
-                        <p class="price">$</p>
-                    </div>
-                    <p>Description of item</p>
-                </div>
-
-
-                <div class="order-item">
-                    <a href="#">
-                        <img src="images/placeholder.png" alt="Popular item placeholder">
-                    </a>
-
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item to order">
-                    </div>
-
-                    <div class="item-info">
-                        <h3>Title</h3>
-                        <p class="price">$</p>
-                    </div>
-                    <p>Description of item</p>
-                </div>
+            <?php menuItems($chefsFavResults); ?>
             </div>
-
 <!-- SCROLL -->
             <!-- <div class="scroll-indicator">
                 <div class="scroll-fill"></div>
@@ -234,55 +95,7 @@ if (!isset($_SESSION['user_id'])) {
             </h2>     
 
             <div class="orders-container scroll-container">
-                <div class="order-item">
-                    <a href="#">
-                        <img src="images/placeholder.png" alt="Popular item placeholder">
-                    </a>
-
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item to order">
-                    </div>
-
-                    <div class="item-info">
-                        <h3>Title</h3>
-                        <p class="price">$</p>
-                    </div>
-                    <p>Description of item</p>
-                </div>
-
-
-                <div class="order-item">
-                    <a href="#">
-                        <img src="images/placeholder.png" alt="Popular item placeholder">
-                    </a>
-
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item to order">
-                    </div>
-
-                    <div class="item-info">
-                        <h3>Title</h3>
-                        <p class="price">$</p>
-                    </div>
-                    <p>Description of item</p>
-                </div>
-
-
-                <div class="order-item">
-                    <a href="#">
-                        <img src="images/placeholder.png" alt="Popular item placeholder">
-                    </a>
-
-                    <div class="add-icon">
-                        <img src="icons/add-icon.png" alt="Add item to order">
-                    </div>
-
-                    <div class="item-info">
-                        <h3>Title</h3>
-                        <p class="price">$</p>
-                    </div>
-                    <p>Description of item</p>
-                </div>
+            <?php menuItems($fastCheapResults); ?>
             </div>
 
 <!-- SCROLL -->

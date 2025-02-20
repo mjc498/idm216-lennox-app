@@ -1,89 +1,6 @@
 <?php
-session_start();
 require '../config.php';
-
-// Check if user is logged in
-if (!isset($_SESSION['user_id'])) {
-    header('Location: loading.php');
-    exit;
-}
-
-
-$bahnMiQuery = "SELECT name, price, description_short, image_url FROM items WHERE category = 'Banh Mi'";
-$bahnMiResults = pg_query($conn, $bahnMiQuery);
-
-$breakfastMeltsQuery = "SELECT name, price, description_short, image_url FROM items WHERE category = 'Breakfast'";
-$breakfastMeltsResults = pg_query($conn, $breakfastMeltsQuery);
-
-$cheesesteaksQuery = "SELECT name, price, description_short, image_url FROM items WHERE category = 'Cheesesteaks'";
-$cheesesteaksResults = pg_query($conn, $cheesesteaksQuery);
-
-$burgersQuery = "SELECT name, price, description_short, image_url FROM items WHERE category = 'Burgers'";
-$burgersResults = pg_query($conn, $burgersQuery);
-
-$specialtySandwichesQuery = "SELECT name, price, description_short, image_url FROM items WHERE category = 'Specialty Sandwiches'";
-$specialtySandwichesResults = pg_query($conn, $specialtySandwichesQuery);
-
-$sandwichesQuery = "SELECT name, price, description_short, image_url FROM items WHERE category = 'Grilled Cheese'";
-$sandwichesResults = pg_query($conn, $sandwichesQuery);
-
-
-$plattersQuery = "SELECT name, price, description_short, image_url FROM items WHERE category = 'Platters'";
-$plattersResults = pg_query($conn, $plattersQuery);
-
-$comboMealsQuery = "SELECT name, price, description_short, image_url FROM items WHERE category = 'Combo Meals'";
-$comboMealsResults = pg_query($conn, $comboMealsQuery);
-
-$sidesQuery = "SELECT name, price, description_short, image_url FROM items WHERE category = 'Sides'";
-$sidesResults = pg_query($conn, $sidesQuery);
-
-
-
-// Error handling function
-function error($query) {
-    if (!$query) {
-        echo "An error occurred while fetching menu items.";
-        exit;
-    }
-}
-
-// Function to display menu items
-function menuItems($category) {
-    error($category);
-    
-    $items = pg_fetch_all($category);
-    if (!$items) {
-        echo "No items found.";
-        return;
-    }
-
-    foreach ($items as $item) {
-        $name = htmlspecialchars($item['name']);
-        $price = htmlspecialchars($item['price']);
-        $shortDes = htmlspecialchars($item['description_short']);
-        $image_url = empty($item['image_url']) ? htmlspecialchars($item['image_url']) : "images/placeholder.png";
-        ////Zoey add a ! to empty when the images in the database are good
-        echo <<<HTML
-            <div class="order-item">
-                <a href="#">
-                    <img src="$image_url" class="food-image" alt="Food image">
-                </a>
-
-                <div class="add-icon">
-                    <img src="icons/add-icon.png" alt="Add item to order">
-                </div>
-
-                <div class="item-info">
-                    <h3>$name</h3>
-                    <p class="price">$price</p>
-                </div>
-                <p class="last-order">$shortDes</p>
-            </div>
-        HTML;
-    }
-}
-
-
+require 'menulogic.php';
 
 ?>
 
@@ -108,7 +25,7 @@ function menuItems($category) {
 <!-- HEADER -->
     <header>
         <div class="header-container">
-            <a href="#">
+            <a href="emptycart.php">
                 <img src="icons/cart-icon.png" alt="Shopping cart icon with items" class="cart-icon">
             </a>
             <h1 class="hello-guest">MENU</h1>

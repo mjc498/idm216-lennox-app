@@ -1,4 +1,5 @@
 <?php 
+
 require '../config.php';
 ?>
 <!DOCTYPE html>
@@ -36,7 +37,7 @@ require '../config.php';
     <!-- GUEST OPTION | ADD PHP -->
         <section class="guest-option">
             <p>or 
-                <a href="guesthome.php" style="font-style: normal; color: var(--accent-color-two);">
+                <a href="home.php" style="font-style: normal; color: var(--accent-color-two);">
                     <i>Continue as Guest</i>
                 </a>
             </p>

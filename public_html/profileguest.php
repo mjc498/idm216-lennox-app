@@ -105,15 +105,15 @@ require '../config.php';
 
     <!-- FOOTER -->
     <nav class="footer-nav">
-        <a href="guesthome.php">
+        <a href="home.php">
             <img src="icons/home-filled-icon.png" alt="Home" aria-label="Go to homepage">
         </a>
 
-        <a href="menuguest.php">
+        <a href="menu.php">
             <img src="icons/menu-icon.png" alt="Menu" aria-label="View the menu">
         </a>
 
-        <a href="favoritesguest.php">
+        <a href="favorites.php">
             <img src="icons/heart-icon.png" alt="Favorites" aria-label="Go to favorites">
         </a>
 

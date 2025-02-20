@@ -18,8 +18,8 @@
     <header>
         <div class="header-container">
             <!-- BACK ARROW | ADD PHP -->
-            <a href="/menu.php">
-                <img src="../icons/arrow-icon.png" alt="Left arrow" class="reverse-arrow-icon">
+            <a href="menu.php">
+                <img src="icons/arrow-icon.png" alt="Left arrow" class="reverse-arrow-icon">
             </a>
             <h1 class="hello-guest">CART</h1>
         </div>
@@ -49,7 +49,7 @@
     <div class="profile-underline"></div>
 
     <!-- ADD MORE ITEMS -->
-    <button type="submit" class="button login-button"><a href="./menu.html">Add More Items</a></button>
+    <button type="submit" class="button login-button"><a href="menu.php">Add More Items</a></button>
     <div class="profile-underline"></div>
 
     <!-- SUBTOTAL | ADD PHP -->
