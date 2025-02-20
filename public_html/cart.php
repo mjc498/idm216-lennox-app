@@ -18,8 +18,8 @@
     <header>
         <div class="header-container">
             <!-- BACK ARROW | ADD PHP -->
-            <a href="/menu.php">
-                <img src="../icons/arrow-icon.png" alt="Left arrow" class="reverse-arrow-icon">
+            <a href="./menu.php">
+                <img src="./icons/arrow-icon.png" alt="Left arrow" class="reverse-arrow-icon">
             </a>
             <h1 class="hello-guest">CART</h1>
         </div>
@@ -30,7 +30,7 @@
     <section>
         <div class="orders-container">
             <div class="order-item">
-                <img src="/images/placeholder.png" class="food-image" alt="Original Banh Mi">
+                <img src="./images/placeholder.png" class="food-image" alt="Original Banh Mi">
                 <div class="item-info">
                     <h3 class="title">Title</h3>
                     <p class="calories">Description Add Ons and Other Stuff blah blah blah</p>

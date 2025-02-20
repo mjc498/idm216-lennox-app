@@ -41,8 +41,8 @@ if (!$isEmpty) {
 
 <!-- HEADER -->
     <header>
-        <a href="./menu.html">
-            <img src="/icons/arrow-icon.png" alt="Left arrow" class="reverse-arrow-icon">
+        <a href="./menu.php">
+            <img src="./icons/arrow-icon.png" alt="Left arrow" class="reverse-arrow-icon">
         </a>
         <div class="header-container">
             <h1 class="hello-guest">CART</h1>
