@@ -60,7 +60,7 @@
     
 
     <!-- CHECKOUT -->
-    <button type="submit" class="button login-button"><a href="./menu.html">Checkout</a></button>
+    <button type="submit" class="button login-button"><a href="./checkout.html">Checkout</a></button>
 </main>
 
 <!-- FOOTER -->
